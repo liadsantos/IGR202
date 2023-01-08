@@ -1,0 +1,23 @@
+Recommendations on Loop Subdivision:
+
+// TODO: Implement here the Loop subdivision instead of the straightforward Linear Subdivision.
+You can have a look at the Linear Subdivision function to take some inspiration from it.
+
+A few recommendations / advices (note that the following regards a simple implementation that does not handle boundaries, you can adapt it if you want to handle those):
+    
+I) start by declaring a vector of new positions "newVertices" and a vector of new triangles "newTriangles".
+	- Do not mix the new quantities and the old ones (betas are the old ones, the new ones are added around the central point).
+	- At the end, replace _vertexPositions by newVertices and _triangleIndices by newTriangles, just as it is done in subdivideLinear().
+	- This will help you writing clean code.
+	- Remember: In the Loop subdivision scheme, a new position (in the output mesh at level k+1) is a linear combination of the old vertices positions (at level k).
+	- So, you should NEVER (!!!!!) have in your code something like: newVertices[ v ] += newVertices[ v_neighbor ] * weight;
+
+II) Compute the neighbors of all the even vertices. You can use a structure such as "std::vector< std::set< unsigned int > > vertex_neighbors" for example.
+	- This will give you the valence n of a given even vertex v, and the value of the coefficient alpha_n that you need to use in the computation of the new position for v.
+	
+III) Compute the new positions for the even vertices. If you compute the even vertices first, you will not be tempted to consider the odd vertices as their neighbors (that would be a -- very common, mistake).
+
+IV) Process all triangles, insert the odd vertices, compute their position using the subdivision mask, and create four new triangles per old triangle.
+	- You can get inspiration from subdivideLinear() for that part.
+
+// Good luck! Do not hesitate asking questions, we are here to help you.
