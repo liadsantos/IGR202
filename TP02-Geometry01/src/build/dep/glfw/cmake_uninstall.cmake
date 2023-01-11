@@ -1,9 +1,9 @@
 
-if (NOT EXISTS "/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/install_manifest.txt")
-  message(FATAL_ERROR "Cannot find install manifest: \"/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/install_manifest.txt\"")
+if (NOT EXISTS "/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/install_manifest.txt")
+  message(FATAL_ERROR "Cannot find install manifest: \"/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/install_manifest.txt\"")
 endif()
 
-file(READ "/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/install_manifest.txt" files)
+file(READ "/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 
 foreach (file ${files})

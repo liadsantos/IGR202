@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src
+CMAKE_SOURCE_DIR = /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build
+CMAKE_BINARY_DIR = /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build
 
 # Include any dependencies generated for this target.
 include dep/glfw/tests/CMakeFiles/gamma.dir/depend.make
@@ -70,32 +70,32 @@ include dep/glfw/tests/CMakeFiles/gamma.dir/progress.make
 include dep/glfw/tests/CMakeFiles/gamma.dir/flags.make
 
 dep/glfw/tests/CMakeFiles/gamma.dir/gamma.c.o: dep/glfw/tests/CMakeFiles/gamma.dir/flags.make
-dep/glfw/tests/CMakeFiles/gamma.dir/gamma.c.o: /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/tests/gamma.c
+dep/glfw/tests/CMakeFiles/gamma.dir/gamma.c.o: /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/tests/gamma.c
 dep/glfw/tests/CMakeFiles/gamma.dir/gamma.c.o: dep/glfw/tests/CMakeFiles/gamma.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object dep/glfw/tests/CMakeFiles/gamma.dir/gamma.c.o"
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT dep/glfw/tests/CMakeFiles/gamma.dir/gamma.c.o -MF CMakeFiles/gamma.dir/gamma.c.o.d -o CMakeFiles/gamma.dir/gamma.c.o -c /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/tests/gamma.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object dep/glfw/tests/CMakeFiles/gamma.dir/gamma.c.o"
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT dep/glfw/tests/CMakeFiles/gamma.dir/gamma.c.o -MF CMakeFiles/gamma.dir/gamma.c.o.d -o CMakeFiles/gamma.dir/gamma.c.o -c /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/tests/gamma.c
 
 dep/glfw/tests/CMakeFiles/gamma.dir/gamma.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gamma.dir/gamma.c.i"
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/tests/gamma.c > CMakeFiles/gamma.dir/gamma.c.i
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/tests/gamma.c > CMakeFiles/gamma.dir/gamma.c.i
 
 dep/glfw/tests/CMakeFiles/gamma.dir/gamma.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gamma.dir/gamma.c.s"
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/tests/gamma.c -o CMakeFiles/gamma.dir/gamma.c.s
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/tests/gamma.c -o CMakeFiles/gamma.dir/gamma.c.s
 
 dep/glfw/tests/CMakeFiles/gamma.dir/__/deps/glad_gl.c.o: dep/glfw/tests/CMakeFiles/gamma.dir/flags.make
-dep/glfw/tests/CMakeFiles/gamma.dir/__/deps/glad_gl.c.o: /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/deps/glad_gl.c
+dep/glfw/tests/CMakeFiles/gamma.dir/__/deps/glad_gl.c.o: /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/deps/glad_gl.c
 dep/glfw/tests/CMakeFiles/gamma.dir/__/deps/glad_gl.c.o: dep/glfw/tests/CMakeFiles/gamma.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object dep/glfw/tests/CMakeFiles/gamma.dir/__/deps/glad_gl.c.o"
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT dep/glfw/tests/CMakeFiles/gamma.dir/__/deps/glad_gl.c.o -MF CMakeFiles/gamma.dir/__/deps/glad_gl.c.o.d -o CMakeFiles/gamma.dir/__/deps/glad_gl.c.o -c /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/deps/glad_gl.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object dep/glfw/tests/CMakeFiles/gamma.dir/__/deps/glad_gl.c.o"
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT dep/glfw/tests/CMakeFiles/gamma.dir/__/deps/glad_gl.c.o -MF CMakeFiles/gamma.dir/__/deps/glad_gl.c.o.d -o CMakeFiles/gamma.dir/__/deps/glad_gl.c.o -c /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/deps/glad_gl.c
 
 dep/glfw/tests/CMakeFiles/gamma.dir/__/deps/glad_gl.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gamma.dir/__/deps/glad_gl.c.i"
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/deps/glad_gl.c > CMakeFiles/gamma.dir/__/deps/glad_gl.c.i
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/deps/glad_gl.c > CMakeFiles/gamma.dir/__/deps/glad_gl.c.i
 
 dep/glfw/tests/CMakeFiles/gamma.dir/__/deps/glad_gl.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gamma.dir/__/deps/glad_gl.c.s"
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/deps/glad_gl.c -o CMakeFiles/gamma.dir/__/deps/glad_gl.c.s
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/deps/glad_gl.c -o CMakeFiles/gamma.dir/__/deps/glad_gl.c.s
 
 # Object files for target gamma
 gamma_OBJECTS = \
@@ -114,18 +114,18 @@ dep/glfw/tests/gamma: /usr/lib/x86_64-linux-gnu/librt.so
 dep/glfw/tests/gamma: /usr/lib/x86_64-linux-gnu/libm.so
 dep/glfw/tests/gamma: /usr/lib/x86_64-linux-gnu/libX11.so
 dep/glfw/tests/gamma: dep/glfw/tests/CMakeFiles/gamma.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable gamma"
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gamma.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable gamma"
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gamma.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 dep/glfw/tests/CMakeFiles/gamma.dir/build: dep/glfw/tests/gamma
 .PHONY : dep/glfw/tests/CMakeFiles/gamma.dir/build
 
 dep/glfw/tests/CMakeFiles/gamma.dir/clean:
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/tests && $(CMAKE_COMMAND) -P CMakeFiles/gamma.dir/cmake_clean.cmake
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/tests && $(CMAKE_COMMAND) -P CMakeFiles/gamma.dir/cmake_clean.cmake
 .PHONY : dep/glfw/tests/CMakeFiles/gamma.dir/clean
 
 dep/glfw/tests/CMakeFiles/gamma.dir/depend:
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/tests /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/tests /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/tests/CMakeFiles/gamma.dir/DependInfo.cmake --color=$(COLOR)
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/tests /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/tests /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/tests/CMakeFiles/gamma.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : dep/glfw/tests/CMakeFiles/gamma.dir/depend
 

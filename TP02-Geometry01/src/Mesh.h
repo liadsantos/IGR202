@@ -4,12 +4,15 @@
 #include <glad/glad.h>
 #include <vector>
 #include <memory>
+#include <math.h>
 
 #include <glm/glm.hpp>
 #include <glm/ext.hpp>
 
 #include <map>
 #include <set>
+
+#include <iostream>
 
 class Mesh {
 public:
@@ -40,6 +43,17 @@ public:
 
   void addPlan(float square_half_side = 1.0f);
 
+  /*float calculateAlpha(unsigned int numTri) {
+    float alpha;
+
+    if (numTri > 3) {
+      alpha = 0.125f
+    }
+    else {
+      alpha = 0.1875f;
+    }
+  }*/
+
   void subdivideLinear() {
     std::vector<glm::vec3> newVertices = _vertexPositions;
     std::vector<glm::uvec3> newTriangles;
@@ -51,7 +65,7 @@ public:
       bool operator == ( Edge const & o ) const {   return a == o.a  &&  b == o.b;  }
     };
     std::map< Edge , unsigned int > newVertexOnEdge;
-    for(unsigned int tIt = 0 ; tIt < _triangleIndices.size() ; ++tIt) {
+    for(unsigned int tIt = 0 ; tIt < _triangleIndices.size() ; ++tIt) { // compute each triangle face
       unsigned int a = _triangleIndices[tIt][0];
       unsigned int b = _triangleIndices[tIt][1];
       unsigned int c = _triangleIndices[tIt][2];
@@ -99,7 +113,8 @@ public:
 
   void subdivideLoop2() {
     // Declare new vertices and new triangles. Initialize the new positions for the even vertices with (0,0,0):
-    std::vector<glm::vec3> newVertices( _vertexPositions.size(), glm::vec3(0,0,0) );
+    //std::vector<glm::vec3> newVertices( _vertexPositions.size(), glm::vec3(0,0,0) );
+    std::vector<glm::vec3> newVertices;
     std::vector<glm::uvec3> newTriangles;
 
     struct Edge {
@@ -111,6 +126,7 @@ public:
 
     std::map< Edge , unsigned int > newVertexOnEdge; // this will be useful to find out whether we already inserted an odd vertex or not
     std::map< Edge , std::set< unsigned int > > trianglesOnEdge; // this will be useful to find out if an edge is boundary or not
+    std::map< unsigned int, unsigned int > oddVertices;   // vertices in faces that share edges
     std::vector< std::set< unsigned int > > neighboringVertices( _vertexPositions.size() ); // this will be used to store the adjacent vertices, i.e., neighboringVertices[i] will be the list of vertices that are adjacent to vertex i.
     std::vector< bool > evenVertexIsBoundary( _vertexPositions.size() , false );
 
@@ -122,6 +138,7 @@ public:
 
       //TODO: Remember the faces shared by the edge (DO IT LATER)
 
+      // stores the indices in a set (container)
       neighboringVertices[ a ].insert( b );
       neighboringVertices[ a ].insert( c );
       neighboringVertices[ b ].insert( a );
@@ -137,22 +154,27 @@ public:
     }
 
     // Set variables to create the new vertices
-    float alpha = 0;
-    int sum = 0;
-    int numTriangles = _triangleIndices.size();
-
-    // Calculate the weights
-    if (numTriangles > 3) { alpha = 3/8 * numTriangles; }
-    else if (numTriangles == 3) { alpha = 3/16; }
+    float alpha;
+    glm::vec3 sum = glm::vec3(0.0,0.0,0.0);
+    unsigned int numTriangles;
 
     // loop for updating the even vertices
     for(unsigned int v = 0; v < _vertexPositions.size(); ++v) {
-      for (unsigned int v_neigh = 0; v_neigh < neighboringVertices[v].size(); ++v_neigh) {
-        sum += (alpha / numTriangles) * neighboringVertices[v_neigh];    // neighboring vertices
+
+      // set the number of neighboring triangles
+      numTriangles = evenVertexValence[v];
+
+      // Calculate the weights
+      if ( numTriangles > 3 )       { alpha = 0.375f / (float)numTriangles; }
+      else if ( numTriangles == 3 ) { alpha = 0.1875f; }
+
+      for (std::set<unsigned int> :: iterator it = neighboringVertices[v].begin(); it != neighboringVertices[v].end(); ++it) {
+        sum += alpha * _vertexPositions[ *it ];                          // neighboring vertices
       }
-      sum += (1 - alpha) * _vertexPositions[v];  // centroid vertex
-      newVertices[v] = sum;   // update the vertex
-      sum = 0;
+
+      sum += (1 - (evenVertexValence[v] * alpha)) * _vertexPositions[v]; // centroid vertex
+      newVertices.push_back(sum);
+      sum = glm::vec3(0.0,0.0,0.0);
     }
 
     // Compute the odd vertices:
@@ -163,39 +185,52 @@ public:
 
       Edge Eab(a,b);
       unsigned int oddVertexOnEdgeEab = 0;
+
+      // there is no Eab edge, so create vertice
       if( newVertexOnEdge.find( Eab ) == newVertexOnEdge.end() ) {
-        newVertices.push_back( glm::vec3(0,0,0) );
-        oddVertexOnEdgeEab = newVertices.size() - 1;
+        newVertices.push_back( (_vertexPositions[ a ] + _vertexPositions[ b ]) / 2.f );
+        oddVertexOnEdgeEab = newVertices.size() - 1; // indice of vertex created on the edge
         newVertexOnEdge[Eab] = oddVertexOnEdgeEab;
+        oddVertices[oddVertexOnEdgeEab] = c;         // indice of third vertex created from first face of the edge
       }
-      else { oddVertexOnEdgeEab = newVertexOnEdge[Eab]; }
 
-      //TODO: Update odd vertices
-
+      // there is Eab edge, so update odd vertice
+      else {
+        oddVertexOnEdgeEab = newVertexOnEdge[Eab];
+        newVertices[oddVertexOnEdgeEab] = newVertices[oddVertexOnEdgeEab] * 3.f / 4.f +             // 3/8*a + 3/8*b
+                                          _vertexPositions[c] / 8.f +                               // 1/8*c
+                                          _vertexPositions[oddVertices[oddVertexOnEdgeEab]] / 8.f;  // 1/8*d (c from the created Eab face)
+      }
 
       Edge Ebc(b,c);
       unsigned int oddVertexOnEdgeEbc = 0;
       if( newVertexOnEdge.find( Ebc ) == newVertexOnEdge.end() ) {
-        newVertices.push_back( glm::vec3(0,0,0) );
+        newVertices.push_back( (_vertexPositions[ b ] + _vertexPositions[ c ]) / 2.f );
         oddVertexOnEdgeEbc = newVertices.size() - 1;
         newVertexOnEdge[Ebc] = oddVertexOnEdgeEbc;
+        oddVertices[oddVertexOnEdgeEbc] = a;
       }
-      else { oddVertexOnEdgeEbc = newVertexOnEdge[Ebc]; }
-
-      //TODO: Update odd vertices
-
+      else {
+        oddVertexOnEdgeEbc = newVertexOnEdge[Ebc];
+        newVertices[oddVertexOnEdgeEbc] = newVertices[oddVertexOnEdgeEbc] * 3.f / 4.f +
+                                          _vertexPositions[a] / 8.f +
+                                          _vertexPositions[oddVertices[oddVertexOnEdgeEbc]] / 8.f;
+      }
 
       Edge Eca(c,a);
       unsigned int oddVertexOnEdgeEca = 0;
       if( newVertexOnEdge.find( Eca ) == newVertexOnEdge.end() ) {
-        newVertices.push_back( glm::vec3(0,0,0) );
+        newVertices.push_back( (_vertexPositions[ c ] + _vertexPositions[ a ]) / 2.f );
         oddVertexOnEdgeEca = newVertices.size() - 1;
         newVertexOnEdge[Eca] = oddVertexOnEdgeEca;
+        oddVertices[oddVertexOnEdgeEca] = b;
       }
-      else { oddVertexOnEdgeEca = newVertexOnEdge[Eca]; }
-
-      //TODO: Update odd vertices
-
+      else {
+        oddVertexOnEdgeEca = newVertexOnEdge[Eca];
+        newVertices[oddVertexOnEdgeEca] = newVertices[oddVertexOnEdgeEca] * 3.f / 4.f +
+                                          _vertexPositions[b] / 8.f +
+                                          _vertexPositions[oddVertices[oddVertexOnEdgeEca]] / 8.f;
+      }
 
       // set new triangles :
       newTriangles.push_back( glm::uvec3( a , oddVertexOnEdgeEab , oddVertexOnEdgeEca ) );
@@ -213,7 +248,8 @@ public:
   }
 
   void subdivideLoop() {
-    subdivideLinear();
+    //subdivideLinear();
+    subdivideLoop2();
   }
 
 private:

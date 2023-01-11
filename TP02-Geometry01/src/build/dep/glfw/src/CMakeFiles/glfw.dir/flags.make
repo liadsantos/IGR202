@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -D_GLFW_USE_CONFIG_H
 
-C_INCLUDES = -I/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/include -I/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/src -I/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/src
+C_INCLUDES = -I/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/include -I/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/src -I/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/src
 
 C_FLAGS = -fPIC -Wall -std=gnu99
 

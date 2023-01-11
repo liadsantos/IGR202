@@ -48,9 +48,9 @@
 #include "stb_image.h"
 
 // Monkey:
-//const std::string DEFAULT_MESH_FILENAME("data/monkey.off");
+const std::string DEFAULT_MESH_FILENAME("data/monkey.off");
 // Sphere:
-const std::string DEFAULT_MESH_FILENAME("data/sphere.off");
+//const std::string DEFAULT_MESH_FILENAME("data/sphere.off");
 
 // window parameters
 GLFWwindow *g_window = nullptr;

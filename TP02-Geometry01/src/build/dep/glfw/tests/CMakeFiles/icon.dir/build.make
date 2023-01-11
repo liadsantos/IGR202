@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src
+CMAKE_SOURCE_DIR = /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build
+CMAKE_BINARY_DIR = /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build
 
 # Include any dependencies generated for this target.
 include dep/glfw/tests/CMakeFiles/icon.dir/depend.make
@@ -70,32 +70,32 @@ include dep/glfw/tests/CMakeFiles/icon.dir/progress.make
 include dep/glfw/tests/CMakeFiles/icon.dir/flags.make
 
 dep/glfw/tests/CMakeFiles/icon.dir/icon.c.o: dep/glfw/tests/CMakeFiles/icon.dir/flags.make
-dep/glfw/tests/CMakeFiles/icon.dir/icon.c.o: /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/tests/icon.c
+dep/glfw/tests/CMakeFiles/icon.dir/icon.c.o: /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/tests/icon.c
 dep/glfw/tests/CMakeFiles/icon.dir/icon.c.o: dep/glfw/tests/CMakeFiles/icon.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object dep/glfw/tests/CMakeFiles/icon.dir/icon.c.o"
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT dep/glfw/tests/CMakeFiles/icon.dir/icon.c.o -MF CMakeFiles/icon.dir/icon.c.o.d -o CMakeFiles/icon.dir/icon.c.o -c /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/tests/icon.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object dep/glfw/tests/CMakeFiles/icon.dir/icon.c.o"
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT dep/glfw/tests/CMakeFiles/icon.dir/icon.c.o -MF CMakeFiles/icon.dir/icon.c.o.d -o CMakeFiles/icon.dir/icon.c.o -c /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/tests/icon.c
 
 dep/glfw/tests/CMakeFiles/icon.dir/icon.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/icon.dir/icon.c.i"
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/tests/icon.c > CMakeFiles/icon.dir/icon.c.i
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/tests/icon.c > CMakeFiles/icon.dir/icon.c.i
 
 dep/glfw/tests/CMakeFiles/icon.dir/icon.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/icon.dir/icon.c.s"
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/tests/icon.c -o CMakeFiles/icon.dir/icon.c.s
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/tests/icon.c -o CMakeFiles/icon.dir/icon.c.s
 
 dep/glfw/tests/CMakeFiles/icon.dir/__/deps/glad_gl.c.o: dep/glfw/tests/CMakeFiles/icon.dir/flags.make
-dep/glfw/tests/CMakeFiles/icon.dir/__/deps/glad_gl.c.o: /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/deps/glad_gl.c
+dep/glfw/tests/CMakeFiles/icon.dir/__/deps/glad_gl.c.o: /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/deps/glad_gl.c
 dep/glfw/tests/CMakeFiles/icon.dir/__/deps/glad_gl.c.o: dep/glfw/tests/CMakeFiles/icon.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object dep/glfw/tests/CMakeFiles/icon.dir/__/deps/glad_gl.c.o"
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT dep/glfw/tests/CMakeFiles/icon.dir/__/deps/glad_gl.c.o -MF CMakeFiles/icon.dir/__/deps/glad_gl.c.o.d -o CMakeFiles/icon.dir/__/deps/glad_gl.c.o -c /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/deps/glad_gl.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object dep/glfw/tests/CMakeFiles/icon.dir/__/deps/glad_gl.c.o"
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT dep/glfw/tests/CMakeFiles/icon.dir/__/deps/glad_gl.c.o -MF CMakeFiles/icon.dir/__/deps/glad_gl.c.o.d -o CMakeFiles/icon.dir/__/deps/glad_gl.c.o -c /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/deps/glad_gl.c
 
 dep/glfw/tests/CMakeFiles/icon.dir/__/deps/glad_gl.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/icon.dir/__/deps/glad_gl.c.i"
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/deps/glad_gl.c > CMakeFiles/icon.dir/__/deps/glad_gl.c.i
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/deps/glad_gl.c > CMakeFiles/icon.dir/__/deps/glad_gl.c.i
 
 dep/glfw/tests/CMakeFiles/icon.dir/__/deps/glad_gl.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/icon.dir/__/deps/glad_gl.c.s"
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/deps/glad_gl.c -o CMakeFiles/icon.dir/__/deps/glad_gl.c.s
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/deps/glad_gl.c -o CMakeFiles/icon.dir/__/deps/glad_gl.c.s
 
 # Object files for target icon
 icon_OBJECTS = \
@@ -114,18 +114,18 @@ dep/glfw/tests/icon: /usr/lib/x86_64-linux-gnu/librt.so
 dep/glfw/tests/icon: /usr/lib/x86_64-linux-gnu/libm.so
 dep/glfw/tests/icon: /usr/lib/x86_64-linux-gnu/libX11.so
 dep/glfw/tests/icon: dep/glfw/tests/CMakeFiles/icon.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable icon"
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/icon.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable icon"
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/icon.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 dep/glfw/tests/CMakeFiles/icon.dir/build: dep/glfw/tests/icon
 .PHONY : dep/glfw/tests/CMakeFiles/icon.dir/build
 
 dep/glfw/tests/CMakeFiles/icon.dir/clean:
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/tests && $(CMAKE_COMMAND) -P CMakeFiles/icon.dir/cmake_clean.cmake
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/tests && $(CMAKE_COMMAND) -P CMakeFiles/icon.dir/cmake_clean.cmake
 .PHONY : dep/glfw/tests/CMakeFiles/icon.dir/clean
 
 dep/glfw/tests/CMakeFiles/icon.dir/depend:
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/tests /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/tests /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/tests/CMakeFiles/icon.dir/DependInfo.cmake --color=$(COLOR)
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/tests /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/tests /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/tests/CMakeFiles/icon.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : dep/glfw/tests/CMakeFiles/icon.dir/depend
 

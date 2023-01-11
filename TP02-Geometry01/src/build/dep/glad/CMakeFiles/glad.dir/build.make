@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src
+CMAKE_SOURCE_DIR = /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build
+CMAKE_BINARY_DIR = /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build
 
 # Include any dependencies generated for this target.
 include dep/glad/CMakeFiles/glad.dir/depend.make
@@ -70,18 +70,18 @@ include dep/glad/CMakeFiles/glad.dir/progress.make
 include dep/glad/CMakeFiles/glad.dir/flags.make
 
 dep/glad/CMakeFiles/glad.dir/src/glad.c.o: dep/glad/CMakeFiles/glad.dir/flags.make
-dep/glad/CMakeFiles/glad.dir/src/glad.c.o: /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glad/src/glad.c
+dep/glad/CMakeFiles/glad.dir/src/glad.c.o: /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glad/src/glad.c
 dep/glad/CMakeFiles/glad.dir/src/glad.c.o: dep/glad/CMakeFiles/glad.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object dep/glad/CMakeFiles/glad.dir/src/glad.c.o"
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glad && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT dep/glad/CMakeFiles/glad.dir/src/glad.c.o -MF CMakeFiles/glad.dir/src/glad.c.o.d -o CMakeFiles/glad.dir/src/glad.c.o -c /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glad/src/glad.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object dep/glad/CMakeFiles/glad.dir/src/glad.c.o"
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glad && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT dep/glad/CMakeFiles/glad.dir/src/glad.c.o -MF CMakeFiles/glad.dir/src/glad.c.o.d -o CMakeFiles/glad.dir/src/glad.c.o -c /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glad/src/glad.c
 
 dep/glad/CMakeFiles/glad.dir/src/glad.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glad.dir/src/glad.c.i"
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glad && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glad/src/glad.c > CMakeFiles/glad.dir/src/glad.c.i
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glad && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glad/src/glad.c > CMakeFiles/glad.dir/src/glad.c.i
 
 dep/glad/CMakeFiles/glad.dir/src/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glad.dir/src/glad.c.s"
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glad && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glad/src/glad.c -o CMakeFiles/glad.dir/src/glad.c.s
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glad && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glad/src/glad.c -o CMakeFiles/glad.dir/src/glad.c.s
 
 # Object files for target glad
 glad_OBJECTS = \
@@ -93,19 +93,19 @@ glad_EXTERNAL_OBJECTS =
 dep/glad/libglad.a: dep/glad/CMakeFiles/glad.dir/src/glad.c.o
 dep/glad/libglad.a: dep/glad/CMakeFiles/glad.dir/build.make
 dep/glad/libglad.a: dep/glad/CMakeFiles/glad.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libglad.a"
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glad && $(CMAKE_COMMAND) -P CMakeFiles/glad.dir/cmake_clean_target.cmake
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glad && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glad.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libglad.a"
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glad && $(CMAKE_COMMAND) -P CMakeFiles/glad.dir/cmake_clean_target.cmake
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glad && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glad.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 dep/glad/CMakeFiles/glad.dir/build: dep/glad/libglad.a
 .PHONY : dep/glad/CMakeFiles/glad.dir/build
 
 dep/glad/CMakeFiles/glad.dir/clean:
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glad && $(CMAKE_COMMAND) -P CMakeFiles/glad.dir/cmake_clean.cmake
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glad && $(CMAKE_COMMAND) -P CMakeFiles/glad.dir/cmake_clean.cmake
 .PHONY : dep/glad/CMakeFiles/glad.dir/clean
 
 dep/glad/CMakeFiles/glad.dir/depend:
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glad /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glad /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glad/CMakeFiles/glad.dir/DependInfo.cmake --color=$(COLOR)
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glad /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glad /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glad/CMakeFiles/glad.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : dep/glad/CMakeFiles/glad.dir/depend
 

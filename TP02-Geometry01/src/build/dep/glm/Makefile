@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src
+CMAKE_SOURCE_DIR = /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build
+CMAKE_BINARY_DIR = /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build && $(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glm//CMakeFiles/progress.marks
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glm/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build && $(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glm//CMakeFiles/progress.marks
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glm/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glm/clean
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glm/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,17 +148,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glm/preinstall
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glm/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glm/preinstall
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glm/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -184,6 +184,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

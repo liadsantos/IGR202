@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src
+CMAKE_SOURCE_DIR = /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build
+CMAKE_BINARY_DIR = /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build
 
 # Utility rule file for docs.
 
@@ -67,8 +67,8 @@ include dep/glfw/docs/CMakeFiles/docs.dir/compiler_depend.make
 include dep/glfw/docs/CMakeFiles/docs.dir/progress.make
 
 dep/glfw/docs/CMakeFiles/docs:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating HTML documentation"
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/docs && /usr/bin/doxygen
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating HTML documentation"
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/docs && /usr/bin/doxygen
 
 docs: dep/glfw/docs/CMakeFiles/docs
 docs: dep/glfw/docs/CMakeFiles/docs.dir/build.make
@@ -79,10 +79,10 @@ dep/glfw/docs/CMakeFiles/docs.dir/build: docs
 .PHONY : dep/glfw/docs/CMakeFiles/docs.dir/build
 
 dep/glfw/docs/CMakeFiles/docs.dir/clean:
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/docs && $(CMAKE_COMMAND) -P CMakeFiles/docs.dir/cmake_clean.cmake
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/docs && $(CMAKE_COMMAND) -P CMakeFiles/docs.dir/cmake_clean.cmake
 .PHONY : dep/glfw/docs/CMakeFiles/docs.dir/clean
 
 dep/glfw/docs/CMakeFiles/docs.dir/depend:
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/docs /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/docs /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/docs/CMakeFiles/docs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/docs /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/docs /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/docs/CMakeFiles/docs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : dep/glfw/docs/CMakeFiles/docs.dir/depend
 

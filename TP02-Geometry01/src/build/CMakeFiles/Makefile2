@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src
+CMAKE_SOURCE_DIR = /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build
+CMAKE_BINARY_DIR = /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -274,14 +274,14 @@ CMakeFiles/tpSubdiv.dir/all: dep/glad/CMakeFiles/glad.dir/all
 CMakeFiles/tpSubdiv.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tpSubdiv.dir/build.make CMakeFiles/tpSubdiv.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tpSubdiv.dir/build.make CMakeFiles/tpSubdiv.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=89,90,91 "Built target tpSubdiv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=89,90,91 "Built target tpSubdiv"
 .PHONY : CMakeFiles/tpSubdiv.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/tpSubdiv.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/tpSubdiv.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : CMakeFiles/tpSubdiv.dir/rule
 
 # Convenience name for target.
@@ -300,14 +300,14 @@ CMakeFiles/tpSubdiv.dir/clean:
 dep/glad/CMakeFiles/glad.dir/all:
 	$(MAKE) $(MAKESILENT) -f dep/glad/CMakeFiles/glad.dir/build.make dep/glad/CMakeFiles/glad.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glad/CMakeFiles/glad.dir/build.make dep/glad/CMakeFiles/glad.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=21 "Built target glad"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=21 "Built target glad"
 .PHONY : dep/glad/CMakeFiles/glad.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glad/CMakeFiles/glad.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glad/CMakeFiles/glad.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glad/CMakeFiles/glad.dir/rule
 
 # Convenience name for target.
@@ -326,14 +326,14 @@ dep/glad/CMakeFiles/glad.dir/clean:
 dep/glfw/CMakeFiles/uninstall.dir/all:
 	$(MAKE) $(MAKESILENT) -f dep/glfw/CMakeFiles/uninstall.dir/build.make dep/glfw/CMakeFiles/uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/CMakeFiles/uninstall.dir/build.make dep/glfw/CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num= "Built target uninstall"
 .PHONY : dep/glfw/CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -352,14 +352,14 @@ dep/glfw/CMakeFiles/uninstall.dir/clean:
 dep/glfw/src/CMakeFiles/glfw.dir/all:
 	$(MAKE) $(MAKESILENT) -f dep/glfw/src/CMakeFiles/glfw.dir/build.make dep/glfw/src/CMakeFiles/glfw.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/src/CMakeFiles/glfw.dir/build.make dep/glfw/src/CMakeFiles/glfw.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=22,23,24,25,26,27,28,29,30,31,32,33,34,35 "Built target glfw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=22,23,24,25,26,27,28,29,30,31,32,33,34,35 "Built target glfw"
 .PHONY : dep/glfw/src/CMakeFiles/glfw.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/src/CMakeFiles/glfw.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/src/CMakeFiles/glfw.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/src/CMakeFiles/glfw.dir/rule
 
 # Convenience name for target.
@@ -378,14 +378,14 @@ dep/glfw/src/CMakeFiles/glfw.dir/clean:
 dep/glfw/examples/CMakeFiles/boing.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/examples/CMakeFiles/boing.dir/build.make dep/glfw/examples/CMakeFiles/boing.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/examples/CMakeFiles/boing.dir/build.make dep/glfw/examples/CMakeFiles/boing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=1,2 "Built target boing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=1,2 "Built target boing"
 .PHONY : dep/glfw/examples/CMakeFiles/boing.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/examples/CMakeFiles/boing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/examples/CMakeFiles/boing.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/examples/CMakeFiles/boing.dir/rule
 
 # Convenience name for target.
@@ -404,14 +404,14 @@ dep/glfw/examples/CMakeFiles/boing.dir/clean:
 dep/glfw/examples/CMakeFiles/gears.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/examples/CMakeFiles/gears.dir/build.make dep/glfw/examples/CMakeFiles/gears.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/examples/CMakeFiles/gears.dir/build.make dep/glfw/examples/CMakeFiles/gears.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=18,19,20 "Built target gears"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=18,19,20 "Built target gears"
 .PHONY : dep/glfw/examples/CMakeFiles/gears.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/examples/CMakeFiles/gears.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/examples/CMakeFiles/gears.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/examples/CMakeFiles/gears.dir/rule
 
 # Convenience name for target.
@@ -430,14 +430,14 @@ dep/glfw/examples/CMakeFiles/gears.dir/clean:
 dep/glfw/examples/CMakeFiles/heightmap.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/examples/CMakeFiles/heightmap.dir/build.make dep/glfw/examples/CMakeFiles/heightmap.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/examples/CMakeFiles/heightmap.dir/build.make dep/glfw/examples/CMakeFiles/heightmap.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=40,41 "Built target heightmap"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=40,41 "Built target heightmap"
 .PHONY : dep/glfw/examples/CMakeFiles/heightmap.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/examples/CMakeFiles/heightmap.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/examples/CMakeFiles/heightmap.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/examples/CMakeFiles/heightmap.dir/rule
 
 # Convenience name for target.
@@ -456,14 +456,14 @@ dep/glfw/examples/CMakeFiles/heightmap.dir/clean:
 dep/glfw/examples/CMakeFiles/offscreen.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/examples/CMakeFiles/offscreen.dir/build.make dep/glfw/examples/CMakeFiles/offscreen.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/examples/CMakeFiles/offscreen.dir/build.make dep/glfw/examples/CMakeFiles/offscreen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=60,61,62 "Built target offscreen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=60,61,62 "Built target offscreen"
 .PHONY : dep/glfw/examples/CMakeFiles/offscreen.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/examples/CMakeFiles/offscreen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/examples/CMakeFiles/offscreen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/examples/CMakeFiles/offscreen.dir/rule
 
 # Convenience name for target.
@@ -482,14 +482,14 @@ dep/glfw/examples/CMakeFiles/offscreen.dir/clean:
 dep/glfw/examples/CMakeFiles/particles.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/examples/CMakeFiles/particles.dir/build.make dep/glfw/examples/CMakeFiles/particles.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/examples/CMakeFiles/particles.dir/build.make dep/glfw/examples/CMakeFiles/particles.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=65,66,67,68 "Built target particles"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=65,66,67,68 "Built target particles"
 .PHONY : dep/glfw/examples/CMakeFiles/particles.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/examples/CMakeFiles/particles.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/examples/CMakeFiles/particles.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/examples/CMakeFiles/particles.dir/rule
 
 # Convenience name for target.
@@ -508,14 +508,14 @@ dep/glfw/examples/CMakeFiles/particles.dir/clean:
 dep/glfw/examples/CMakeFiles/sharing.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/examples/CMakeFiles/sharing.dir/build.make dep/glfw/examples/CMakeFiles/sharing.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/examples/CMakeFiles/sharing.dir/build.make dep/glfw/examples/CMakeFiles/sharing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=71,72,73 "Built target sharing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=71,72,73 "Built target sharing"
 .PHONY : dep/glfw/examples/CMakeFiles/sharing.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/examples/CMakeFiles/sharing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/examples/CMakeFiles/sharing.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/examples/CMakeFiles/sharing.dir/rule
 
 # Convenience name for target.
@@ -534,14 +534,14 @@ dep/glfw/examples/CMakeFiles/sharing.dir/clean:
 dep/glfw/examples/CMakeFiles/simple.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/examples/CMakeFiles/simple.dir/build.make dep/glfw/examples/CMakeFiles/simple.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/examples/CMakeFiles/simple.dir/build.make dep/glfw/examples/CMakeFiles/simple.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=74,75 "Built target simple"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=74,75 "Built target simple"
 .PHONY : dep/glfw/examples/CMakeFiles/simple.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/examples/CMakeFiles/simple.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/examples/CMakeFiles/simple.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/examples/CMakeFiles/simple.dir/rule
 
 # Convenience name for target.
@@ -560,14 +560,14 @@ dep/glfw/examples/CMakeFiles/simple.dir/clean:
 dep/glfw/examples/CMakeFiles/splitview.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/examples/CMakeFiles/splitview.dir/build.make dep/glfw/examples/CMakeFiles/splitview.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/examples/CMakeFiles/splitview.dir/build.make dep/glfw/examples/CMakeFiles/splitview.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=76,77,78 "Built target splitview"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=76,77,78 "Built target splitview"
 .PHONY : dep/glfw/examples/CMakeFiles/splitview.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/examples/CMakeFiles/splitview.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/examples/CMakeFiles/splitview.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/examples/CMakeFiles/splitview.dir/rule
 
 # Convenience name for target.
@@ -586,14 +586,14 @@ dep/glfw/examples/CMakeFiles/splitview.dir/clean:
 dep/glfw/examples/CMakeFiles/wave.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/examples/CMakeFiles/wave.dir/build.make dep/glfw/examples/CMakeFiles/wave.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/examples/CMakeFiles/wave.dir/build.make dep/glfw/examples/CMakeFiles/wave.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=95,96 "Built target wave"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=95,96 "Built target wave"
 .PHONY : dep/glfw/examples/CMakeFiles/wave.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/examples/CMakeFiles/wave.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/examples/CMakeFiles/wave.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/examples/CMakeFiles/wave.dir/rule
 
 # Convenience name for target.
@@ -612,14 +612,14 @@ dep/glfw/examples/CMakeFiles/wave.dir/clean:
 dep/glfw/tests/CMakeFiles/clipboard.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/clipboard.dir/build.make dep/glfw/tests/CMakeFiles/clipboard.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/clipboard.dir/build.make dep/glfw/tests/CMakeFiles/clipboard.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=3,4,5 "Built target clipboard"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=3,4,5 "Built target clipboard"
 .PHONY : dep/glfw/tests/CMakeFiles/clipboard.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/tests/CMakeFiles/clipboard.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/tests/CMakeFiles/clipboard.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/tests/CMakeFiles/clipboard.dir/rule
 
 # Convenience name for target.
@@ -638,14 +638,14 @@ dep/glfw/tests/CMakeFiles/clipboard.dir/clean:
 dep/glfw/tests/CMakeFiles/events.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/events.dir/build.make dep/glfw/tests/CMakeFiles/events.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/events.dir/build.make dep/glfw/tests/CMakeFiles/events.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=13,14,15 "Built target events"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=13,14,15 "Built target events"
 .PHONY : dep/glfw/tests/CMakeFiles/events.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/tests/CMakeFiles/events.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/tests/CMakeFiles/events.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/tests/CMakeFiles/events.dir/rule
 
 # Convenience name for target.
@@ -664,14 +664,14 @@ dep/glfw/tests/CMakeFiles/events.dir/clean:
 dep/glfw/tests/CMakeFiles/msaa.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/msaa.dir/build.make dep/glfw/tests/CMakeFiles/msaa.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/msaa.dir/build.make dep/glfw/tests/CMakeFiles/msaa.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=57,58,59 "Built target msaa"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=57,58,59 "Built target msaa"
 .PHONY : dep/glfw/tests/CMakeFiles/msaa.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/tests/CMakeFiles/msaa.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/tests/CMakeFiles/msaa.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/tests/CMakeFiles/msaa.dir/rule
 
 # Convenience name for target.
@@ -690,14 +690,14 @@ dep/glfw/tests/CMakeFiles/msaa.dir/clean:
 dep/glfw/tests/CMakeFiles/glfwinfo.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/glfwinfo.dir/build.make dep/glfw/tests/CMakeFiles/glfwinfo.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/glfwinfo.dir/build.make dep/glfw/tests/CMakeFiles/glfwinfo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=36,37,38,39 "Built target glfwinfo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=36,37,38,39 "Built target glfwinfo"
 .PHONY : dep/glfw/tests/CMakeFiles/glfwinfo.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/tests/CMakeFiles/glfwinfo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/tests/CMakeFiles/glfwinfo.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/tests/CMakeFiles/glfwinfo.dir/rule
 
 # Convenience name for target.
@@ -716,14 +716,14 @@ dep/glfw/tests/CMakeFiles/glfwinfo.dir/clean:
 dep/glfw/tests/CMakeFiles/iconify.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/iconify.dir/build.make dep/glfw/tests/CMakeFiles/iconify.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/iconify.dir/build.make dep/glfw/tests/CMakeFiles/iconify.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=45,46,47 "Built target iconify"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=45,46,47 "Built target iconify"
 .PHONY : dep/glfw/tests/CMakeFiles/iconify.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/tests/CMakeFiles/iconify.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/tests/CMakeFiles/iconify.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/tests/CMakeFiles/iconify.dir/rule
 
 # Convenience name for target.
@@ -742,14 +742,14 @@ dep/glfw/tests/CMakeFiles/iconify.dir/clean:
 dep/glfw/tests/CMakeFiles/monitors.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/monitors.dir/build.make dep/glfw/tests/CMakeFiles/monitors.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/monitors.dir/build.make dep/glfw/tests/CMakeFiles/monitors.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=54,55,56 "Built target monitors"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=54,55,56 "Built target monitors"
 .PHONY : dep/glfw/tests/CMakeFiles/monitors.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/tests/CMakeFiles/monitors.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/tests/CMakeFiles/monitors.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/tests/CMakeFiles/monitors.dir/rule
 
 # Convenience name for target.
@@ -768,14 +768,14 @@ dep/glfw/tests/CMakeFiles/monitors.dir/clean:
 dep/glfw/tests/CMakeFiles/reopen.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/reopen.dir/build.make dep/glfw/tests/CMakeFiles/reopen.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/reopen.dir/build.make dep/glfw/tests/CMakeFiles/reopen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=69,70 "Built target reopen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=69,70 "Built target reopen"
 .PHONY : dep/glfw/tests/CMakeFiles/reopen.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/tests/CMakeFiles/reopen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/tests/CMakeFiles/reopen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/tests/CMakeFiles/reopen.dir/rule
 
 # Convenience name for target.
@@ -794,14 +794,14 @@ dep/glfw/tests/CMakeFiles/reopen.dir/clean:
 dep/glfw/tests/CMakeFiles/cursor.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/cursor.dir/build.make dep/glfw/tests/CMakeFiles/cursor.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/cursor.dir/build.make dep/glfw/tests/CMakeFiles/cursor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=6,7,8 "Built target cursor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=6,7,8 "Built target cursor"
 .PHONY : dep/glfw/tests/CMakeFiles/cursor.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/tests/CMakeFiles/cursor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/tests/CMakeFiles/cursor.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/tests/CMakeFiles/cursor.dir/rule
 
 # Convenience name for target.
@@ -820,14 +820,14 @@ dep/glfw/tests/CMakeFiles/cursor.dir/clean:
 dep/glfw/tests/CMakeFiles/empty.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/empty.dir/build.make dep/glfw/tests/CMakeFiles/empty.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/empty.dir/build.make dep/glfw/tests/CMakeFiles/empty.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=9,10,11,12 "Built target empty"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=9,10,11,12 "Built target empty"
 .PHONY : dep/glfw/tests/CMakeFiles/empty.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/tests/CMakeFiles/empty.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/tests/CMakeFiles/empty.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/tests/CMakeFiles/empty.dir/rule
 
 # Convenience name for target.
@@ -846,14 +846,14 @@ dep/glfw/tests/CMakeFiles/empty.dir/clean:
 dep/glfw/tests/CMakeFiles/gamma.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/gamma.dir/build.make dep/glfw/tests/CMakeFiles/gamma.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/gamma.dir/build.make dep/glfw/tests/CMakeFiles/gamma.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=16,17 "Built target gamma"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=16,17 "Built target gamma"
 .PHONY : dep/glfw/tests/CMakeFiles/gamma.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/tests/CMakeFiles/gamma.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/tests/CMakeFiles/gamma.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/tests/CMakeFiles/gamma.dir/rule
 
 # Convenience name for target.
@@ -872,14 +872,14 @@ dep/glfw/tests/CMakeFiles/gamma.dir/clean:
 dep/glfw/tests/CMakeFiles/icon.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/icon.dir/build.make dep/glfw/tests/CMakeFiles/icon.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/icon.dir/build.make dep/glfw/tests/CMakeFiles/icon.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=42,43,44 "Built target icon"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=42,43,44 "Built target icon"
 .PHONY : dep/glfw/tests/CMakeFiles/icon.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/tests/CMakeFiles/icon.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/tests/CMakeFiles/icon.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/tests/CMakeFiles/icon.dir/rule
 
 # Convenience name for target.
@@ -898,14 +898,14 @@ dep/glfw/tests/CMakeFiles/icon.dir/clean:
 dep/glfw/tests/CMakeFiles/inputlag.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/inputlag.dir/build.make dep/glfw/tests/CMakeFiles/inputlag.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/inputlag.dir/build.make dep/glfw/tests/CMakeFiles/inputlag.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=48,49,50 "Built target inputlag"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=48,49,50 "Built target inputlag"
 .PHONY : dep/glfw/tests/CMakeFiles/inputlag.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/tests/CMakeFiles/inputlag.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/tests/CMakeFiles/inputlag.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/tests/CMakeFiles/inputlag.dir/rule
 
 # Convenience name for target.
@@ -924,14 +924,14 @@ dep/glfw/tests/CMakeFiles/inputlag.dir/clean:
 dep/glfw/tests/CMakeFiles/joysticks.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/joysticks.dir/build.make dep/glfw/tests/CMakeFiles/joysticks.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/joysticks.dir/build.make dep/glfw/tests/CMakeFiles/joysticks.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=51,52,53 "Built target joysticks"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=51,52,53 "Built target joysticks"
 .PHONY : dep/glfw/tests/CMakeFiles/joysticks.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/tests/CMakeFiles/joysticks.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/tests/CMakeFiles/joysticks.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/tests/CMakeFiles/joysticks.dir/rule
 
 # Convenience name for target.
@@ -950,14 +950,14 @@ dep/glfw/tests/CMakeFiles/joysticks.dir/clean:
 dep/glfw/tests/CMakeFiles/opacity.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/opacity.dir/build.make dep/glfw/tests/CMakeFiles/opacity.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/opacity.dir/build.make dep/glfw/tests/CMakeFiles/opacity.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=63,64 "Built target opacity"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=63,64 "Built target opacity"
 .PHONY : dep/glfw/tests/CMakeFiles/opacity.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/tests/CMakeFiles/opacity.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/tests/CMakeFiles/opacity.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/tests/CMakeFiles/opacity.dir/rule
 
 # Convenience name for target.
@@ -976,14 +976,14 @@ dep/glfw/tests/CMakeFiles/opacity.dir/clean:
 dep/glfw/tests/CMakeFiles/tearing.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/tearing.dir/build.make dep/glfw/tests/CMakeFiles/tearing.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/tearing.dir/build.make dep/glfw/tests/CMakeFiles/tearing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=79,80 "Built target tearing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=79,80 "Built target tearing"
 .PHONY : dep/glfw/tests/CMakeFiles/tearing.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/tests/CMakeFiles/tearing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/tests/CMakeFiles/tearing.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/tests/CMakeFiles/tearing.dir/rule
 
 # Convenience name for target.
@@ -1002,14 +1002,14 @@ dep/glfw/tests/CMakeFiles/tearing.dir/clean:
 dep/glfw/tests/CMakeFiles/threads.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/threads.dir/build.make dep/glfw/tests/CMakeFiles/threads.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/threads.dir/build.make dep/glfw/tests/CMakeFiles/threads.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=81,82,83 "Built target threads"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=81,82,83 "Built target threads"
 .PHONY : dep/glfw/tests/CMakeFiles/threads.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/tests/CMakeFiles/threads.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/tests/CMakeFiles/threads.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/tests/CMakeFiles/threads.dir/rule
 
 # Convenience name for target.
@@ -1028,14 +1028,14 @@ dep/glfw/tests/CMakeFiles/threads.dir/clean:
 dep/glfw/tests/CMakeFiles/timeout.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/timeout.dir/build.make dep/glfw/tests/CMakeFiles/timeout.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/timeout.dir/build.make dep/glfw/tests/CMakeFiles/timeout.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=84,85,86 "Built target timeout"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=84,85,86 "Built target timeout"
 .PHONY : dep/glfw/tests/CMakeFiles/timeout.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/tests/CMakeFiles/timeout.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/tests/CMakeFiles/timeout.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/tests/CMakeFiles/timeout.dir/rule
 
 # Convenience name for target.
@@ -1054,14 +1054,14 @@ dep/glfw/tests/CMakeFiles/timeout.dir/clean:
 dep/glfw/tests/CMakeFiles/title.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/title.dir/build.make dep/glfw/tests/CMakeFiles/title.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/title.dir/build.make dep/glfw/tests/CMakeFiles/title.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=87,88 "Built target title"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=87,88 "Built target title"
 .PHONY : dep/glfw/tests/CMakeFiles/title.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/tests/CMakeFiles/title.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/tests/CMakeFiles/title.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/tests/CMakeFiles/title.dir/rule
 
 # Convenience name for target.
@@ -1080,14 +1080,14 @@ dep/glfw/tests/CMakeFiles/title.dir/clean:
 dep/glfw/tests/CMakeFiles/triangle-vulkan.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/triangle-vulkan.dir/build.make dep/glfw/tests/CMakeFiles/triangle-vulkan.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/triangle-vulkan.dir/build.make dep/glfw/tests/CMakeFiles/triangle-vulkan.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=92,93,94 "Built target triangle-vulkan"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=92,93,94 "Built target triangle-vulkan"
 .PHONY : dep/glfw/tests/CMakeFiles/triangle-vulkan.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/tests/CMakeFiles/triangle-vulkan.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/tests/CMakeFiles/triangle-vulkan.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/tests/CMakeFiles/triangle-vulkan.dir/rule
 
 # Convenience name for target.
@@ -1106,14 +1106,14 @@ dep/glfw/tests/CMakeFiles/triangle-vulkan.dir/clean:
 dep/glfw/tests/CMakeFiles/windows.dir/all: dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/windows.dir/build.make dep/glfw/tests/CMakeFiles/windows.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/tests/CMakeFiles/windows.dir/build.make dep/glfw/tests/CMakeFiles/windows.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=97,98,99,100 "Built target windows"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=97,98,99,100 "Built target windows"
 .PHONY : dep/glfw/tests/CMakeFiles/windows.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/tests/CMakeFiles/windows.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/tests/CMakeFiles/windows.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/tests/CMakeFiles/windows.dir/rule
 
 # Convenience name for target.
@@ -1132,14 +1132,14 @@ dep/glfw/tests/CMakeFiles/windows.dir/clean:
 dep/glfw/docs/CMakeFiles/docs.dir/all:
 	$(MAKE) $(MAKESILENT) -f dep/glfw/docs/CMakeFiles/docs.dir/build.make dep/glfw/docs/CMakeFiles/docs.dir/depend
 	$(MAKE) $(MAKESILENT) -f dep/glfw/docs/CMakeFiles/docs.dir/build.make dep/glfw/docs/CMakeFiles/docs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num= "Built target docs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num= "Built target docs"
 .PHONY : dep/glfw/docs/CMakeFiles/docs.dir/all
 
 # Build rule for subdir invocation for target.
 dep/glfw/docs/CMakeFiles/docs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dep/glfw/docs/CMakeFiles/docs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles 0
 .PHONY : dep/glfw/docs/CMakeFiles/docs.dir/rule
 
 # Convenience name for target.

@@ -1,4 +1,4 @@
-# Install script for directory: /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glm/glm
+# Install script for directory: /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glm/glm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

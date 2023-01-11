@@ -1,4 +1,4 @@
-# Install script for directory: /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/src
+# Install script for directory: /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -43,6 +43,6 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glfw/src/libglfw3.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glfw/src/libglfw3.a")
 endif()
 

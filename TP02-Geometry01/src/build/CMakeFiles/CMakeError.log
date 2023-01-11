@@ -1,22 +1,22 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
-Change Dir: /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles/CMakeScratch/TryCompile-MPMWGa
+Change Dir: /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles/CMakeScratch/TryCompile-jAY4w0
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_75309/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_75309.dir/build.make CMakeFiles/cmTC_75309.dir/build
-gmake[1] : on entre dans le répertoire « /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles/CMakeScratch/TryCompile-MPMWGa »
-Building C object CMakeFiles/cmTC_75309.dir/src.c.o
-/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_75309.dir/src.c.o -c /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles/CMakeScratch/TryCompile-MPMWGa/src.c
-Linking C executable cmTC_75309
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_75309.dir/link.txt --verbose=1
-/usr/bin/cc -rdynamic CMakeFiles/cmTC_75309.dir/src.c.o -o cmTC_75309 
-/usr/bin/ld : CMakeFiles/cmTC_75309.dir/src.c.o : dans la fonction « main » :
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_7b462/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_7b462.dir/build.make CMakeFiles/cmTC_7b462.dir/build
+gmake[1] : on entre dans le répertoire « /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles/CMakeScratch/TryCompile-jAY4w0 »
+Building C object CMakeFiles/cmTC_7b462.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_7b462.dir/src.c.o -c /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles/CMakeScratch/TryCompile-jAY4w0/src.c
+Linking C executable cmTC_7b462
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7b462.dir/link.txt --verbose=1
+/usr/bin/cc -rdynamic CMakeFiles/cmTC_7b462.dir/src.c.o -o cmTC_7b462 
+/usr/bin/ld : CMakeFiles/cmTC_7b462.dir/src.c.o : dans la fonction « main » :
 src.c:(.text+0x2f) : référence indéfinie vers « pthread_create »
 /usr/bin/ld : src.c:(.text+0x3b) : référence indéfinie vers « pthread_detach »
 /usr/bin/ld : src.c:(.text+0x47) : référence indéfinie vers « pthread_cancel »
 /usr/bin/ld : src.c:(.text+0x58) : référence indéfinie vers « pthread_join »
 collect2: error: ld returned 1 exit status
-gmake[1]: *** [CMakeFiles/cmTC_75309.dir/build.make:99 : cmTC_75309] Erreur 1
-gmake[1] : on quitte le répertoire « /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles/CMakeScratch/TryCompile-MPMWGa »
-gmake: *** [Makefile:127 : cmTC_75309/fast] Erreur 2
+gmake[1]: *** [CMakeFiles/cmTC_7b462.dir/build.make:99 : cmTC_7b462] Erreur 1
+gmake[1] : on quitte le répertoire « /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles/CMakeScratch/TryCompile-jAY4w0 »
+gmake: *** [Makefile:127 : cmTC_7b462/fast] Erreur 2
 
 
 Source file was:
@@ -42,20 +42,20 @@ int main(void)
 
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles/CMakeScratch/TryCompile-lAiqq8
+Change Dir: /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles/CMakeScratch/TryCompile-u4cT2Z
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0c34e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0c34e.dir/build.make CMakeFiles/cmTC_0c34e.dir/build
-gmake[1] : on entre dans le répertoire « /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles/CMakeScratch/TryCompile-lAiqq8 »
-Building C object CMakeFiles/cmTC_0c34e.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_0c34e.dir/CheckFunctionExists.c.o -c /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles/CMakeScratch/TryCompile-lAiqq8/CheckFunctionExists.c
-Linking C executable cmTC_0c34e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0c34e.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_0c34e.dir/CheckFunctionExists.c.o -o cmTC_0c34e  -lpthreads 
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_87f99/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_87f99.dir/build.make CMakeFiles/cmTC_87f99.dir/build
+gmake[1] : on entre dans le répertoire « /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles/CMakeScratch/TryCompile-u4cT2Z »
+Building C object CMakeFiles/cmTC_87f99.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_87f99.dir/CheckFunctionExists.c.o -c /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles/CMakeScratch/TryCompile-u4cT2Z/CheckFunctionExists.c
+Linking C executable cmTC_87f99
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_87f99.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_87f99.dir/CheckFunctionExists.c.o -o cmTC_87f99  -lpthreads 
 /usr/bin/ld : ne peut trouver -lpthreads
 collect2: error: ld returned 1 exit status
-gmake[1]: *** [CMakeFiles/cmTC_0c34e.dir/build.make:99 : cmTC_0c34e] Erreur 1
-gmake[1] : on quitte le répertoire « /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles/CMakeScratch/TryCompile-lAiqq8 »
-gmake: *** [Makefile:127 : cmTC_0c34e/fast] Erreur 2
+gmake[1]: *** [CMakeFiles/cmTC_87f99.dir/build.make:99 : cmTC_87f99] Erreur 1
+gmake[1] : on quitte le répertoire « /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles/CMakeScratch/TryCompile-u4cT2Z »
+gmake: *** [Makefile:127 : cmTC_87f99/fast] Erreur 2
 
 
 

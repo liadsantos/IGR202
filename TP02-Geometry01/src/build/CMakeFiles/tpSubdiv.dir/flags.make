@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glad/include -I/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/include -I/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glm/glm/..
+CXX_INCLUDES = -I/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glad/include -I/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/include -I/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glm/glm/..
 
 CXX_FLAGS = -std=gnu++11
 

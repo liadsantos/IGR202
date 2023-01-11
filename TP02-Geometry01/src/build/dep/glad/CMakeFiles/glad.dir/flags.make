@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glad/include
+C_INCLUDES = -I/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glad/include
 
 C_FLAGS = 
 

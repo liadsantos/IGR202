@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src
+CMAKE_SOURCE_DIR = /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build
+CMAKE_BINARY_DIR = /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/tpSubdiv.dir/depend.make
@@ -70,46 +70,46 @@ include CMakeFiles/tpSubdiv.dir/progress.make
 include CMakeFiles/tpSubdiv.dir/flags.make
 
 CMakeFiles/tpSubdiv.dir/main.cpp.o: CMakeFiles/tpSubdiv.dir/flags.make
-CMakeFiles/tpSubdiv.dir/main.cpp.o: /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/main.cpp
+CMakeFiles/tpSubdiv.dir/main.cpp.o: /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/main.cpp
 CMakeFiles/tpSubdiv.dir/main.cpp.o: CMakeFiles/tpSubdiv.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tpSubdiv.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tpSubdiv.dir/main.cpp.o -MF CMakeFiles/tpSubdiv.dir/main.cpp.o.d -o CMakeFiles/tpSubdiv.dir/main.cpp.o -c /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tpSubdiv.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tpSubdiv.dir/main.cpp.o -MF CMakeFiles/tpSubdiv.dir/main.cpp.o.d -o CMakeFiles/tpSubdiv.dir/main.cpp.o -c /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/main.cpp
 
 CMakeFiles/tpSubdiv.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tpSubdiv.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/main.cpp > CMakeFiles/tpSubdiv.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/main.cpp > CMakeFiles/tpSubdiv.dir/main.cpp.i
 
 CMakeFiles/tpSubdiv.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tpSubdiv.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/main.cpp -o CMakeFiles/tpSubdiv.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/main.cpp -o CMakeFiles/tpSubdiv.dir/main.cpp.s
 
 CMakeFiles/tpSubdiv.dir/Mesh.cpp.o: CMakeFiles/tpSubdiv.dir/flags.make
-CMakeFiles/tpSubdiv.dir/Mesh.cpp.o: /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/Mesh.cpp
+CMakeFiles/tpSubdiv.dir/Mesh.cpp.o: /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/Mesh.cpp
 CMakeFiles/tpSubdiv.dir/Mesh.cpp.o: CMakeFiles/tpSubdiv.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tpSubdiv.dir/Mesh.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tpSubdiv.dir/Mesh.cpp.o -MF CMakeFiles/tpSubdiv.dir/Mesh.cpp.o.d -o CMakeFiles/tpSubdiv.dir/Mesh.cpp.o -c /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/Mesh.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tpSubdiv.dir/Mesh.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tpSubdiv.dir/Mesh.cpp.o -MF CMakeFiles/tpSubdiv.dir/Mesh.cpp.o.d -o CMakeFiles/tpSubdiv.dir/Mesh.cpp.o -c /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/Mesh.cpp
 
 CMakeFiles/tpSubdiv.dir/Mesh.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tpSubdiv.dir/Mesh.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/Mesh.cpp > CMakeFiles/tpSubdiv.dir/Mesh.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/Mesh.cpp > CMakeFiles/tpSubdiv.dir/Mesh.cpp.i
 
 CMakeFiles/tpSubdiv.dir/Mesh.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tpSubdiv.dir/Mesh.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/Mesh.cpp -o CMakeFiles/tpSubdiv.dir/Mesh.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/Mesh.cpp -o CMakeFiles/tpSubdiv.dir/Mesh.cpp.s
 
 CMakeFiles/tpSubdiv.dir/ShaderProgram.cpp.o: CMakeFiles/tpSubdiv.dir/flags.make
-CMakeFiles/tpSubdiv.dir/ShaderProgram.cpp.o: /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/ShaderProgram.cpp
+CMakeFiles/tpSubdiv.dir/ShaderProgram.cpp.o: /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/ShaderProgram.cpp
 CMakeFiles/tpSubdiv.dir/ShaderProgram.cpp.o: CMakeFiles/tpSubdiv.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/tpSubdiv.dir/ShaderProgram.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tpSubdiv.dir/ShaderProgram.cpp.o -MF CMakeFiles/tpSubdiv.dir/ShaderProgram.cpp.o.d -o CMakeFiles/tpSubdiv.dir/ShaderProgram.cpp.o -c /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/ShaderProgram.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/tpSubdiv.dir/ShaderProgram.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tpSubdiv.dir/ShaderProgram.cpp.o -MF CMakeFiles/tpSubdiv.dir/ShaderProgram.cpp.o.d -o CMakeFiles/tpSubdiv.dir/ShaderProgram.cpp.o -c /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/ShaderProgram.cpp
 
 CMakeFiles/tpSubdiv.dir/ShaderProgram.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tpSubdiv.dir/ShaderProgram.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/ShaderProgram.cpp > CMakeFiles/tpSubdiv.dir/ShaderProgram.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/ShaderProgram.cpp > CMakeFiles/tpSubdiv.dir/ShaderProgram.cpp.i
 
 CMakeFiles/tpSubdiv.dir/ShaderProgram.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tpSubdiv.dir/ShaderProgram.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/ShaderProgram.cpp -o CMakeFiles/tpSubdiv.dir/ShaderProgram.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/ShaderProgram.cpp -o CMakeFiles/tpSubdiv.dir/ShaderProgram.cpp.s
 
 # Object files for target tpSubdiv
 tpSubdiv_OBJECTS = \
@@ -130,9 +130,9 @@ tpSubdiv: /usr/lib/x86_64-linux-gnu/librt.so
 tpSubdiv: /usr/lib/x86_64-linux-gnu/libm.so
 tpSubdiv: /usr/lib/x86_64-linux-gnu/libX11.so
 tpSubdiv: CMakeFiles/tpSubdiv.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable tpSubdiv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable tpSubdiv"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tpSubdiv.dir/link.txt --verbose=$(VERBOSE)
-	/usr/bin/cmake -E copy /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/tpSubdiv /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src
+	/usr/bin/cmake -E copy /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/tpSubdiv /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src
 
 # Rule to build all files generated by this target.
 CMakeFiles/tpSubdiv.dir/build: tpSubdiv
@@ -143,6 +143,6 @@ CMakeFiles/tpSubdiv.dir/clean:
 .PHONY : CMakeFiles/tpSubdiv.dir/clean
 
 CMakeFiles/tpSubdiv.dir/depend:
-	cd /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/CMakeFiles/tpSubdiv.dir/DependInfo.cmake --color=$(COLOR)
+	cd /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/CMakeFiles/tpSubdiv.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tpSubdiv.dir/depend
 

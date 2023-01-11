@@ -1,5 +1,5 @@
 dep/glfw/tests/CMakeFiles/threads.dir/__/deps/glad_gl.c.o: \
- /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/deps/glad_gl.c \
+ /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/deps/glad_gl.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -50,8 +50,8 @@ dep/glfw/tests/CMakeFiles/threads.dir/__/deps/glad_gl.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/strings.h \
- /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/deps/glad/gl.h \
- /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glfw/deps/glad/khrplatform.h \
+ /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/deps/glad/gl.h \
+ /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glfw/deps/glad/khrplatform.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h

@@ -1,4 +1,4 @@
-# Install script for directory: /cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/dep/glm
+# Install script for directory: /cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/dep/glm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/cal/exterieurs/dossantos-22/Telecom/IGR202/TP01-Geometry/src/build/dep/glm/glm/cmake_install.cmake")
+  include("/cal/exterieurs/dossantos-22/IGR202/TP02-Geometry01/src/build/dep/glm/glm/cmake_install.cmake")
 
 endif()
 
