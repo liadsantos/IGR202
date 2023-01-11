@@ -129,6 +129,7 @@ public:
     std::map< unsigned int, unsigned int > oddVertices;   // vertices in faces that share edges
     std::vector< std::set< unsigned int > > neighboringVertices( _vertexPositions.size() ); // this will be used to store the adjacent vertices, i.e., neighboringVertices[i] will be the list of vertices that are adjacent to vertex i.
     std::vector< bool > evenVertexIsBoundary( _vertexPositions.size() , false );
+    std::vector< bool > evenVertexIsShared( _vertexPositions.size() , false );
 
     // Compute the valences of the even vertices, the neighboring vertices required to update the position of the even vertices, and the boundaries:
     for(unsigned int tIt = 0 ; tIt < _triangleIndices.size() ; ++tIt) {
@@ -136,7 +137,34 @@ public:
       unsigned int b = _triangleIndices[tIt][1];
       unsigned int c = _triangleIndices[tIt][2];
 
-      //TODO: Remember the faces shared by the edge (DO IT LATER)
+      //Remember the faces shared by the edge
+      Edge Eab(a,b);
+      Edge Ebc(b,c);
+      Edge Eca(c,a);
+
+      if (trianglesOnEdge.find(Eab) == trianglesOnEdge.end()) {
+        evenVertexIsShared[a] = true;
+        evenVertexIsShared[b] = true;
+      } else {
+        evenVertexIsShared[a] = false;
+        evenVertexIsShared[b] = false;
+      }
+
+      if (trianglesOnEdge.find(Ebc) == trianglesOnEdge.end()) {
+        evenVertexIsShared[b] = true;
+        evenVertexIsShared[c] = true;
+      } else {
+        evenVertexIsShared[b] = false;
+        evenVertexIsShared[c] = false;
+      }
+
+      if (trianglesOnEdge.find(Eca) == trianglesOnEdge.end()) {
+        evenVertexIsShared[c] = true;
+        evenVertexIsShared[a] = true;
+      } else {
+        evenVertexIsShared[c] = false;
+        evenVertexIsShared[a] = false;
+      }
 
       // stores the indices in a set (container)
       neighboringVertices[ a ].insert( b );
@@ -148,7 +176,7 @@ public:
     }
 
     // The valence of a vertex is the number of adjacent vertices:
-    std::vector< unsigned int > evenVertexValence( _vertexPositions.size() , 0 );
+    std::vector< unsigned int > evenVertexValence( _vertexPositions.size() ,0 );
     for( unsigned int v = 0 ; v < _vertexPositions.size() ; ++v ) {
       evenVertexValence[ v ] = neighboringVertices[ v ].size();
     }
@@ -200,6 +228,8 @@ public:
         newVertices[oddVertexOnEdgeEab] = newVertices[oddVertexOnEdgeEab] * 3.f / 4.f +             // 3/8*a + 3/8*b
                                           _vertexPositions[c] / 8.f +                               // 1/8*c
                                           _vertexPositions[oddVertices[oddVertexOnEdgeEab]] / 8.f;  // 1/8*d (c from the created Eab face)
+        trianglesOnEdge[Eab].insert(a);
+        trianglesOnEdge[Eab].insert(b);
       }
 
       Edge Ebc(b,c);
@@ -238,7 +268,6 @@ public:
       newTriangles.push_back( glm::uvec3( oddVertexOnEdgeEca , oddVertexOnEdgeEbc , c ) );
       newTriangles.push_back( glm::uvec3( oddVertexOnEdgeEab , oddVertexOnEdgeEbc , oddVertexOnEdgeEca ) );
     }
-
 
     // after that:
     _triangleIndices = newTriangles;
