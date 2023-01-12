@@ -1,1 +1,0 @@
-/usr/bin/c++ -rdynamic CMakeFiles/tpSubdiv.dir/main.cpp.o CMakeFiles/tpSubdiv.dir/Mesh.cpp.o CMakeFiles/tpSubdiv.dir/ShaderProgram.cpp.o -o tpSubdiv  dep/glad/libglad.a dep/glfw/src/libglfw3.a -ldl -lrt -lm -ldl -lX11 -lpthread 
