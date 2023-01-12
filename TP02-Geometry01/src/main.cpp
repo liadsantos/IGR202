@@ -76,6 +76,8 @@ bool g_appTimerStoppedP = true;
 
 // textures
 unsigned int g_availableTextureSlot = 0;
+int normalOnGPU = 0;
+int colorOnGPU = 0;
 
 int g_albedoTexLoaded = 0;
 GLuint g_albedoTex;
@@ -225,13 +227,24 @@ struct Light {
     const glm::vec3 scene_center,
     const float scene_radius)
   {
-    // compute the MVP matrix from the light's point of view
-    const float max_depth = glm::length(position - scene_center) + scene_radius;
-    const glm::mat4 proj_mat = glm::ortho(-scene_radius, scene_radius, -scene_radius, scene_radius, 0.f, max_depth);
-    //const glm::mat4 proj_mat = glm::perspective(glm::radians(70.f), 1.f, 0.1f, max_depth);
-    const glm::mat4 view_mat = glm::lookAt(position, scene_center, glm::vec3(0, 1, 0));
-    const glm::mat4 model_mat = glm::mat4(1.0);
-    depthMVP = proj_mat * view_mat * model_mat;
+
+    // Compute the MVP matrix - render the scene from the light's point of view
+    // Projection matrix: compute values that are visible from the scene
+    glm::mat4 depthProjectionM = glm::ortho<float>(
+      -scene_radius, scene_radius,   // xmin, xmax
+      -scene_radius, scene_radius,   // ymin, ymax
+      -10.0, 20.0);  // zmin, zmax (values from tutorial www.opengl-tutorial.org)
+
+    // View matrix: view model
+    glm::mat4 depthViweM = glm::lookAt(position,          // eye - camera position
+                                       scene_center,      // center
+                                       glm::vec3(0,1,0));
+
+    // multiply matrices
+    depthMVP = depthProjectionM * depthViweM;
+
+    // sends to vertexShader the shadow generation
+    shader_shadow_map_Ptr->set("depthMVP", depthMVP);
   }
 
   void allocateShadowMapFbo(unsigned int w=800, unsigned int h=600)
@@ -266,26 +279,37 @@ struct Scene {
   // useful for debug
   bool saveShadowMapsPpm = false;
 
-  void render()
-  {
+  // use of normal mapping
+  float booleanTrue = 1.0;
+  float booleanFalse = 0.0;
+
+  void render() {
     //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     // first, render the shadow maps
     glEnable(GL_CULL_FACE);
     glCullFace(GL_FRONT);
+
     shadomMapShader->use();
+
     for(int i=0; i<lights.size(); ++i) {
       Light &light = lights[i];
-      light.setupCameraForShadowMapping(shadomMapShader, scene_center, scene_radius*1.5f);
+      light.setupCameraForShadowMapping(
+        shadomMapShader,
+        scene_center,
+        scene_radius*1.5f);
       light.bindShadowMap();
 
-      // render the objects in the scene
-      shadomMapShader->set("depthMVP", light.depthMVP*planeMat);
+      // Render the objects in the scene
+      // backwall
+      shadomMapShader->set("shadowModel", planeMat);
       plane->render();
 
-      shadomMapShader->set("depthMVP", light.depthMVP*floorMat);
+      // floor
+      shadomMapShader->set("shadowModel", floorMat);
       plane->render();
 
-      shadomMapShader->set("depthMVP", light.depthMVP*rhinoMat);
+      // rhino
+      shadomMapShader->set("shadowModel", rhinoMat);
       rhino->render();
 
       if(saveShadowMapsPpm) {
@@ -315,44 +339,59 @@ struct Scene {
     // lights
     for(int i=0; i<lights.size(); ++i) {
       Light &light = lights[i];
-      mainShader->set(std::string("lightSources[")+std::to_string(i)+std::string("].position"), light.position);
-      mainShader->set(std::string("lightSources[")+std::to_string(i)+std::string("].color"), light.color);
-      mainShader->set(std::string("lightSources[")+std::to_string(i)+std::string("].intensity"), light.intensity);
-      mainShader->set(std::string("lightSources[")+std::to_string(i)+std::string("].isActive"), 1);
-      mainShader->set(std::string("shadowMapTex[")+std::to_string(i)+std::string("]"), (int)light.shadowMapTexOnGPU);
-      mainShader->set(std::string("shadowMapMVP[")+std::to_string(i)+std::string("]"), light.depthMVP);
+      int lightShadowMap = light.shadowMapTexOnGPU; // map as int and not as float
+
+      mainShader->set(
+        std::string("lightSources[")+std::to_string(i)+std::string("].position"),
+        light.position);
+
+      mainShader->set(
+        std::string("lightSources[")+std::to_string(i)+std::string("].color"),
+        light.color);
+
+      mainShader->set(
+        std::string("lightSources[")+std::to_string(i)+std::string("].intensity"),
+        light.intensity);
+
+      mainShader->set(
+        std::string("lightSources[")+std::to_string(i)+std::string("].isActive"),
+        1);
+
+      // sends to fragment shader the shadow textures and shadow mapping
+      mainShader->set(
+        std::string("depthMVP[")+std::to_string(i)+std::string("]"),
+        light.depthMVP);
+
+      mainShader->set(
+        std::string("depthTex[")+std::to_string(i)+std::string("]"),
+        lightShadowMap);
     }
 
     // back-wall
-    mainShader->set("material.albedo", glm::vec3(0.29, 0.51, 0.82)); // default value if the texture was not loaded
-    mainShader->set("material.albedoTex", (int)g_albedoTexOnGPU);
-    mainShader->set("material.albedoTexLoaded", g_albedoTexLoaded);
-    mainShader->set("material.normalTex", (int)g_normalTexOnGPU);
-    mainShader->set("material.normalTexLoaded", g_normalTexLoaded);
     mainShader->set("modelMat", planeMat);
     mainShader->set("normMat", glm::mat3(glm::inverseTranspose(planeMat)));
+    mainShader->set("material.normalMap", normalOnGPU);
+    mainShader->set("material.useNormalMap", booleanTrue);
+    mainShader->set("material.colorTex", colorOnGPU);
     plane->render();
 
     // floor
     mainShader->set("material.albedo", glm::vec3(0.8, 0.8, 0.9));
-    mainShader->set("material.albedoTexLoaded", 0);
-    mainShader->set("material.normalTexLoaded", 0);
     mainShader->set("modelMat", floorMat);
     mainShader->set("normMat", glm::mat3(glm::inverseTranspose(floorMat)));
+    mainShader->set("material.useNormalMap", booleanFalse);
     plane->render();
 
     // rhino
     mainShader->set("material.albedo", glm::vec3(1, 0.71, 0.29));
-    mainShader->set("material.albedoTexLoaded", 0);
-    mainShader->set("material.normalTexLoaded", 0);
     mainShader->set("modelMat", rhinoMat);
     mainShader->set("normMat", glm::mat3(glm::inverseTranspose(rhinoMat)));
+    mainShader->set("material.useNormalMap", booleanFalse);
     rhino->render();
 
     mainShader->stop();
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   }
-
 
   void subdivideCenterMesh() {
     rhino->subdivideLoop();
@@ -569,7 +608,7 @@ void initScene(const std::string &meshFilename)
     g_scene.floorMat = glm::translate(glm::mat4(1.0), glm::vec3(0, -1.0, 0))*
       glm::rotate(glm::mat4(1.0), (float)(-0.5f*M_PI), glm::vec3(1.0, 0.0, 0.0));
   }
-
+  /*
   // Load textures
   {
     g_albedoTex = loadTextureFromFileToGPU("data/color.png");
@@ -590,6 +629,24 @@ void initScene(const std::string &meshFilename)
     glActiveTexture(GL_TEXTURE0 + g_normalTexOnGPU);
     glBindTexture(GL_TEXTURE_2D, g_normalTex);
     g_normalTexLoaded = 1;
+  }*/
+
+  // Load and setup textures
+  GLuint normalID, colorID;
+  normalID = loadTextureFromFileToGPU("data/normal.png");    // send to GPU
+  colorID = loadTextureFromFileToGPU("data/color.png");      // send to GPU
+  {
+    normalOnGPU = g_availableTextureSlot;
+    g_availableTextureSlot ++;
+    glActiveTexture(GL_TEXTURE0 + normalOnGPU);
+    glBindTexture(GL_TEXTURE_2D, normalID);
+  }
+
+  {
+    colorOnGPU = g_availableTextureSlot;
+    g_availableTextureSlot ++;
+    glActiveTexture(GL_TEXTURE0 + colorOnGPU);
+    glBindTexture(GL_TEXTURE_2D, colorID);
   }
 
   // Setup lights
@@ -605,7 +662,7 @@ void initScene(const std::string &meshFilename)
   };
   unsigned int shadow_map_width=2000, shadow_map_height=2000; // play with these parameters
   for(int i=0; i<3; ++i) {
-    g_scene.lights.push_back(Light());
+    /*g_scene.lights.push_back(Light());
     Light &a_light = g_scene.lights[g_scene.lights.size() - 1];
     a_light.position = pos[i];
     a_light.color = col[i];
@@ -614,6 +671,26 @@ void initScene(const std::string &meshFilename)
     glActiveTexture(GL_TEXTURE0 + a_light.shadowMapTexOnGPU);
     a_light.allocateShadowMapFbo(shadow_map_width, shadow_map_height);
     // glBindTexture(GL_TEXTURE_2D, a_light.shadowMap.getTextureId());
+    ++g_availableTextureSlot;*/
+
+    g_scene.lights.push_back(Light());
+    Light &a_light = g_scene.lights[g_scene.lights.size() - 1];
+
+    // set the light position
+    a_light.position = pos[i];
+
+    // set the light color
+    a_light.color = col[i];
+
+    // set light intensity
+    a_light.intensity = 0.5f;
+
+    // textures
+    a_light.shadowMapTexOnGPU = g_availableTextureSlot;
+    glActiveTexture(GL_TEXTURE0 + a_light.shadowMapTexOnGPU);
+    glBindTexture(GL_TEXTURE_2D, a_light.shadowMap.getTextureId());
+    a_light.allocateShadowMapFbo(shadow_map_width, shadow_map_height);
+
     ++g_availableTextureSlot;
   }
 
