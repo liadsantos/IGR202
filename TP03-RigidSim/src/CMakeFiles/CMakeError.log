@@ -1,0 +1,61 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/CMakeFiles/CMakeScratch/TryCompile-dRtNes
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_65b56/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_65b56.dir/build.make CMakeFiles/cmTC_65b56.dir/build
+gmake[1] : on entre dans le répertoire « /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/CMakeFiles/CMakeScratch/TryCompile-dRtNes »
+Building C object CMakeFiles/cmTC_65b56.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_65b56.dir/src.c.o -c /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/CMakeFiles/CMakeScratch/TryCompile-dRtNes/src.c
+Linking C executable cmTC_65b56
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_65b56.dir/link.txt --verbose=1
+/usr/bin/cc -rdynamic CMakeFiles/cmTC_65b56.dir/src.c.o -o cmTC_65b56 
+/usr/bin/ld : CMakeFiles/cmTC_65b56.dir/src.c.o : dans la fonction « main » :
+src.c:(.text+0x2f) : référence indéfinie vers « pthread_create »
+/usr/bin/ld : src.c:(.text+0x3b) : référence indéfinie vers « pthread_detach »
+/usr/bin/ld : src.c:(.text+0x47) : référence indéfinie vers « pthread_cancel »
+/usr/bin/ld : src.c:(.text+0x58) : référence indéfinie vers « pthread_join »
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_65b56.dir/build.make:99 : cmTC_65b56] Erreur 1
+gmake[1] : on quitte le répertoire « /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/CMakeFiles/CMakeScratch/TryCompile-dRtNes »
+gmake: *** [Makefile:127 : cmTC_65b56/fast] Erreur 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/CMakeFiles/CMakeScratch/TryCompile-949kVs
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c9b3e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c9b3e.dir/build.make CMakeFiles/cmTC_c9b3e.dir/build
+gmake[1] : on entre dans le répertoire « /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/CMakeFiles/CMakeScratch/TryCompile-949kVs »
+Building C object CMakeFiles/cmTC_c9b3e.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_c9b3e.dir/CheckFunctionExists.c.o -c /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/CMakeFiles/CMakeScratch/TryCompile-949kVs/CheckFunctionExists.c
+Linking C executable cmTC_c9b3e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c9b3e.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_c9b3e.dir/CheckFunctionExists.c.o -o cmTC_c9b3e  -lpthreads 
+/usr/bin/ld : ne peut trouver -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_c9b3e.dir/build.make:99 : cmTC_c9b3e] Erreur 1
+gmake[1] : on quitte le répertoire « /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/CMakeFiles/CMakeScratch/TryCompile-949kVs »
+gmake: *** [Makefile:127 : cmTC_c9b3e/fast] Erreur 2
+
+
+

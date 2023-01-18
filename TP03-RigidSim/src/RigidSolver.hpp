@@ -70,11 +70,15 @@ public:
     V = v0;                     // initial velocity
     omega = omega0;             // initial angular velocity
 
-    // TODO: calculate physical attributes
-    // M =
-    // I0 =
-    // I0inv =
-    // Iinv =
+    // Calculate physical attributes
+    M = dens * w * h * d;       // mass = density * volume
+    I0 = Mat3f(Vec3f(           // inertia tensor on body space
+      1/12 * M * (pow(h,2) + pow(d,2)),
+      1/12 * M * (pow(w,2) + pow(d,2)),
+      1/12 * M * (pow(w,2) + pow(h,2)))
+    );
+    I0inv = I0.inverse();       // inverse of inertia tensor on body space
+    Iinv = R * I0inv * R.transpose();
 
     // vertices data (8 vertices)
     vdata0.push_back(Vec3f(-0.5*w, -0.5*h, -0.5*d));
@@ -111,7 +115,9 @@ public:
 
     computeForceAndTorque();
 
-    // TODO: time integration
+    // Time integration - temporal evolution of state variables
+    body->X = body->X + dt * body->P / body->M;
+    body->P = body->P + dt * body->F;
 
     ++_step;
     _sim_t += dt;
