@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/tpRigid.dir/main.cpp.o CMakeFiles/tpRigid.dir/Mesh.cpp.o CMakeFiles/tpRigid.dir/ShaderProgram.cpp.o CMakeFiles/tpRigid.dir/dep/glad/src/glad.c.o -o tpRigid  dep/glfw/src/libglfw3.a -ldl -lrt -lm -ldl -lX11 -lpthread 
