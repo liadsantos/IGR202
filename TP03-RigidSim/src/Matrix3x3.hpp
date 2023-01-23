@@ -43,9 +43,9 @@ public:
   }
 
   explicit Matrix3x3(const Vector3<T> &diag) {
-    v[0][0]=diag.x; v[0][1]=0; v[0][2]=0;
-    v[1][0]=0; v[1][1]=diag.y; v[1][2]=0;
-    v[2][0]=0; v[2][1]=0; v[2][2]=diag.z;
+    v[0][0]=diag.x; v[0][1]=0;      v[0][2]=0;
+    v[1][0]=0;      v[1][1]=diag.y; v[1][2]=0;
+    v[2][0]=0;      v[2][1]=0;      v[2][2]=diag.z;
   }
 
   Matrix3x3(const Vector3<T> &c0, const Vector3<T> &c1, const Vector3<T> &c2) {

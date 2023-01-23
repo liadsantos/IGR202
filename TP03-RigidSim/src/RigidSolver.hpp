@@ -73,9 +73,9 @@ public:
     // Calculate physical attributes
     M = dens * w * h * d;       // mass = density * volume
     I0 = Mat3f(Vec3f(           // inertia tensor on body space
-      1/12 * M * (pow(h,2) + pow(d,2)),
-      1/12 * M * (pow(w,2) + pow(d,2)),
-      1/12 * M * (pow(w,2) + pow(h,2)))
+      1.f/12.f * M * (pow(h,2) + pow(d,2)),
+      1.f/12.f * M * (pow(w,2) + pow(d,2)),
+      1.f/12.f * M * (pow(w,2) + pow(h,2)))
     );
     I0inv = I0.inverse();       // inverse of inertia tensor on body space
     Iinv = R * I0inv * R.transpose();
@@ -115,9 +115,15 @@ public:
 
     computeForceAndTorque();
 
-    // Time integration - temporal evolution of state variables
-    body->X = body->X + dt * body->P / body->M;
-    body->P = body->P + dt * body->F;
+    /// Time integration - temporal evolution of state variables
+    // linear
+    body->X = body->X + dt * body->P / body->M;     // position
+    body->P = body->P + dt * body->F;               // linear momentum
+    body->L = body->L + dt * body->tau;             // angular momentum
+
+    // rotation
+    body->omega = body->Iinv * body->L;                                   // angular velocity
+    body->R = body->R + dt * body->omega.crossProductMatrix() * body->R;  // rotation matrix
 
     ++_step;
     _sim_t += dt;
@@ -128,11 +134,13 @@ public:
 private:
   void computeForceAndTorque()
   {
-    // TODO: force and torque calculation
+    // Force and torque calculation
+    body->F = body->M * _g;
+    body->tau = (body->R * body->vdata0[0] + body->X).crossProduct(body->F);
 
-    // TODO: instance force at the very first step
-    if(_step==1) {
-
+    // Instance force at the very first step
+    if(_step == 1) {
+      body->F = Vec3f(5.15, 0.25, 1.03);
     }
   }
 
