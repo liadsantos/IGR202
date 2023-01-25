@@ -42,7 +42,7 @@ dep/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/strings.h /usr/include/assert.h \
  /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/dep/glfw/src/internal.h \
- /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/build/dep/glfw/src/glfw_config.h \
+ /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/dep/glfw/src/glfw_config.h \
  /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/dep/glfw/src/../include/GLFW/glfw3.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \

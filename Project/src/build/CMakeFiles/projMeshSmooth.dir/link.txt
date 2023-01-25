@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/projMeshSmooth.dir/main.cpp.o CMakeFiles/projMeshSmooth.dir/Mesh.cpp.o CMakeFiles/projMeshSmooth.dir/ShaderProgram.cpp.o -o projMeshSmooth  dep/glad/libglad.a dep/glfw/src/libglfw3.a -ldl -lrt -lm -ldl -lX11 -lpthread 

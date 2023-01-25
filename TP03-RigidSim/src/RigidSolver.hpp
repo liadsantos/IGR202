@@ -122,8 +122,8 @@ public:
     body->L = body->L + dt * body->tau;             // angular momentum
 
     // rotation
-    body->omega = body->Iinv * body->L;                                   // angular velocity
-    body->R = body->R + dt * body->omega.crossProductMatrix() * body->R;  // rotation matrix
+    body->omega = body->Iinv * body->L;                                     // angular velocity
+    body->R = body->R + dt * (body->omega).crossProductMatrix() * body->R;  // rotation matrix
 
     ++_step;
     _sim_t += dt;
@@ -134,13 +134,15 @@ public:
 private:
   void computeForceAndTorque()
   {
-    // Force and torque calculation
+    // Force (mass * accelaration)
     body->F = body->M * _g;
-    body->tau = (body->R * body->vdata0[0] + body->X).crossProduct(body->F);
+
+    // torque (r - x) crossProduct F
+    body->tau = (body->vdata0[0] - body->X).crossProduct(body->F);
 
     // Instance force at the very first step
     if(_step == 1) {
-      body->F = Vec3f(5.15, 0.25, 1.03);
+      body->F = Vec3f(0.15, 0.25, 0.03);
     }
   }
 
