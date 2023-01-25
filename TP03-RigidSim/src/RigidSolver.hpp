@@ -137,12 +137,12 @@ private:
     // Force (mass * accelaration)
     body->F = body->M * _g;
 
-    // torque (r - x) crossProduct F
-    body->tau = (body->vdata0[0] - body->X).crossProduct(body->F);
-
     // Instance force at the very first step
     if(_step == 1) {
-      body->F = Vec3f(0.15, 0.25, 0.03);
+      body->F += Vec3f(0.15, 0.25, 0.03);
+
+      // torque (r - x) crossProduct F
+      body->tau = (body->R * body->vdata0[0]).crossProduct(body->F); // apply only when the force is applied
     }
   }
 
