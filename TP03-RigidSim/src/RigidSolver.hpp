@@ -23,11 +23,13 @@
 
 #include "Vector3.hpp"
 #include "Matrix3x3.hpp"
+#include "quaternion.hpp"
 
 struct BodyAttributes {
   BodyAttributes() :
-    X(0, 0, 0), R(Mat3f::I()), P(0, 0, 0), L(0, 0, 0),
-    V(0, 0, 0), omega(0, 0, 0), F(0, 0, 0), tau(0, 0, 0) {}
+    X(0, 0, 0), R(Mat3f::I()), P(0, 0, 0), L(0, 0, 0), Q(Quaternion(1, 0, 0, 0)),
+    V(0, 0, 0), omega(0, 0, 0), omegaTilde(Quaternion(1, 0, 0, 0)),
+    F(0, 0, 0), tau(0, 0, 0) {}
 
   glm::mat4 worldMat() const
   {
@@ -47,10 +49,12 @@ struct BodyAttributes {
   Mat3f R;                      // rotation
   Vec3f P;                      // linear momentum
   Vec3f L;                      // angular momentum
+  Quaternion Q;                 // quaternion
 
   // auxiliary quantities
   Vec3f V;                      // linear velocity
   Vec3f omega;                  // angular velocity
+  Quaternion omegaTilde;        // angular velocity for quaternion
 
   // force and torque
   Vec3f F;                      // force
@@ -121,9 +125,15 @@ public:
     body->P = body->P + dt * body->F;               // linear momentum
     body->L = body->L + dt * body->tau;             // angular momentum
 
-    // rotation
-    body->omega = body->Iinv * body->L;                                     // angular velocity
-    body->R = body->R + dt * (body->omega).crossProductMatrix() * body->R;  // rotation matrix
+    // angular
+    body->Iinv = body->R * body->I0inv * body->R.transpose();
+    body->omega = body->Iinv * body->L;             // angular velocity
+    //body->R = body->R + dt * (body->omega).crossProductMatrix() * body->R;  // rotation matrix
+
+    // quaternion
+    body->omegaTilde = Quaternion(body->omega, 0);
+    body->Q = body->Q + Quaternion(body->omega, 0).product(body->Q) * dt / 2.f;
+    body->R = body->Q.normalize().rotationMatrix();
 
     ++_step;
     _sim_t += dt;
@@ -136,10 +146,11 @@ private:
   {
     // Force (mass * accelaration)
     body->F = body->M * _g;
+    body->tau = Vec3f(0, 0, 0);
 
     // Instance force at the very first step
     if(_step == 1) {
-      body->F += Vec3f(0.15, 0.25, 0.03);
+      body->F += Vec3f(2.15, 0.25, 0.03);
 
       // torque (r - x) crossProduct F
       body->tau = (body->R * body->vdata0[0]).crossProduct(body->F); // apply only when the force is applied

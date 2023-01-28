@@ -1666,7 +1666,8 @@ CMakeFiles/tpRigid.dir/main.cpp.o: /cal/exterieurs/dossantos-22/IGR202/TP03-Rigi
   /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/RigidSolver.hpp \
   /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/Vector3.hpp \
   /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/typedefs.hpp \
-  /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/Matrix3x3.hpp
+  /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/Matrix3x3.hpp \
+  /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/quaternion.hpp
 
 
 /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/Vector3.hpp:
@@ -1784,6 +1785,8 @@ CMakeFiles/tpRigid.dir/main.cpp.o: /cal/exterieurs/dossantos-22/IGR202/TP03-Rigi
 /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/dep/glm/glm/ext/matrix_double3x4_precision.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
+
+/cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/quaternion.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
 

@@ -500,4 +500,5 @@ CMakeFiles/tpRigid.dir/main.cpp.o: \
  /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/RigidSolver.hpp \
  /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/Vector3.hpp \
  /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/typedefs.hpp \
- /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/Matrix3x3.hpp
+ /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/Matrix3x3.hpp \
+ /cal/exterieurs/dossantos-22/IGR202/TP03-RigidSim/src/quaternion.hpp
