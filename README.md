@@ -4,7 +4,7 @@ IGR202 - Informatique graphique et réalité virtuelle
 
 C++, OpenGL
 
-## TP1 - Rendering
+## TP1 - Rendering - Shadow Mapping
 
 <img src="https://user-images.githubusercontent.com/115878785/215296461-0112e5b9-769d-4bbc-aeb3-5cb311c25768.png" width="490" height="400">
 
