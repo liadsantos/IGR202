@@ -194,16 +194,17 @@ public:
 private:
   void buildNeighbor()
   {
-    // TODO:
-    for (int i = 0; i < f_width; i++) {
-      for (int j = 0; j < f_height; j++) {
-        // if (_pos[i])
+    // clear positions as the particles are moving
+    for (auto &pid : _pidxInGrid) {
+      pid.clear();
+    }
 
-        _pos.push_back(Vec2f(i+0.25, j+0.25));
-        _pos.push_back(Vec2f(i+0.75, j+0.25));
-        _pos.push_back(Vec2f(i+0.25, j+0.75));
-        _pos.push_back(Vec2f(i+0.75, j+0.75));
-      }
+    // register each particle to a cell
+    for (int p = 0; p < _pos.size(); p++) {
+      tIndex idx = idx1d(floor(_pos[p].x), floor(_pos[p].y));
+
+      // the particle p will be associated to cell idx:
+      _pidxInGrid[idx].push_back(p);
     }
   }
 
