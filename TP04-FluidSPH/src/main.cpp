@@ -200,7 +200,7 @@ private:
     }
 
     // register each particle to a cell
-    for (int p = 0; p < _pos.size(); p++) {
+    for (tIndex p = 0; p < _pos.size(); p++) {
       tIndex idx = idx1d(floor(_pos[p].x), floor(_pos[p].y));
 
       // the particle p will be associated to cell idx:
@@ -208,9 +208,31 @@ private:
     }
   }
 
+  std::vector<tIndex> computeNeighbors(Vec2f p) {
+    tIndex idx_p = idx1d(floor(p.x), floor(p.y));
+    std::vector<tIndex> neigh_p;
+
+    for (tIndex i = 0; i < _pidxInGrid.size(); i++) {
+      if (idx_p - floor(i*_h) < _h) {               // cell_p - tam_grid_x*radio < radio -> it is a neighbor cell
+        neigh_p.push_back(i);                       // push the id of cell neighbor to p
+      }
+    }
+
+    return neigh_p;
+  }
+
   void computeDensity()
   {
-    // TODO:
+    for (int i = 0; i < _pos.size(); i++) {
+      std::vector<tIndex> neighCells = computeNeighbors(_pos[i]);   // neighboring cells of particle i
+
+      for (auto &n : neighCells) {
+        std::vector<tIndex> neighPartCell_n = _pidxInGrid[n];       // neighboring particles of each cell neighbor of i
+
+        for (auto &p : neighPartCell_n)
+          _d[i] += _m0 * _kernel.w(_pos[i] - _pos[p]);              // compute density considering particle p of cell i
+      }
+    }
   }
 
   void computePressure()
