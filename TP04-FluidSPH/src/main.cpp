@@ -146,6 +146,7 @@ public:
     _acc = std::vector<Vec2f>(_pos.size(), Vec2f(0, 0));
     _p   = std::vector<Real>(_pos.size(), 0);
     _d   = std::vector<Real>(_pos.size(), 0);
+    _pidxInGrid = std::vector<std::vector<tIndex>>(f_width*f_height, std::vector<tIndex>(_pos.size(), 0));
 
     _col = std::vector<float>(_pos.size()*4, 1.0); // RGBA
     _vln = std::vector<float>(_pos.size()*4, 0.0); // GL_LINES
@@ -242,7 +243,9 @@ private:
 
   void applyBodyForce()
   {
-    // TODO:
+    for (int i = 0; i < _pos.size(); i++) {
+      _acc[i] += _g;                                                // body acceleration of each particle
+    }
   }
 
   void applyPressureForce()
@@ -257,12 +260,16 @@ private:
 
   void updateVelocity()
   {
-    // TODO:
+    for (int p = 0; p < _pos.size(); p++) {
+      _vel[p] = _vel[p] + _dt*_acc[p];
+    }
   }
 
   void updatePosition()
   {
-    // TODO:
+    for (int p = 0; p < _pos.size(); p++) {
+      _pos[p] = _pos[p] + _dt*_vel[p];
+    }
   }
 
   // simple collision detection/resolution for each particle
