@@ -146,7 +146,7 @@ public:
     _acc = std::vector<Vec2f>(_pos.size(), Vec2f(0, 0));
     _p   = std::vector<Real>(_pos.size(), 0);
     _d   = std::vector<Real>(_pos.size(), 0);
-    _pidxInGrid = std::vector<std::vector<tIndex>>(f_width*f_height, std::vector<tIndex>(_pos.size(), 0));
+    _pidxInGrid = std::vector<std::vector<tIndex>>(_resX*_resY, std::vector<tIndex>());
 
     _col = std::vector<float>(_pos.size()*4, 1.0); // RGBA
     _vln = std::vector<float>(_pos.size()*4, 0.0); // GL_LINES
@@ -189,7 +189,8 @@ public:
     const Real k,               // NOTE: You can use _k for k here.
     const Real gamma=7.0)
   {
-    // TODO: pressure calculation
+    // pressure calculation
+    return std::max(k * (pow(d/d0, gamma) - 1), 0.0);
   }
 
 private:
@@ -209,14 +210,40 @@ private:
     }
   }
 
+
   std::vector<tIndex> computeNeighbors(Vec2f p) {
-    tIndex idx_p = idx1d(floor(p.x), floor(p.y));
+    int x_p = floor(p.x);
+    int y_p = floor(p.y);
     std::vector<tIndex> neigh_p;
 
-    for (tIndex i = 0; i < _pidxInGrid.size(); i++) {
-      if (idx_p - floor(i*_h) < _h) {               // cell_p - tam_grid_x*radio < radio -> it is a neighbor cell
-        neigh_p.push_back(i);                       // push the id of cell neighbor to p
-      }
+    neigh_p.push_back(idx1d(x_p, y_p));                  // cell that p belongs
+
+    if (x_p > 0) {
+      neigh_p.push_back(idx1d(x_p-1, y_p));
+
+      if (y_p > 0)
+        neigh_p.push_back(idx1d(x_p-1, y_p-1));
+
+      if (y_p < _resY-1)
+        neigh_p.push_back(idx1d(x_p-1, y_p+1));
+    }
+
+    if (x_p < _resX-1) {
+      neigh_p.push_back(idx1d(x_p+1, y_p));
+
+      if (y_p > 0)
+        neigh_p.push_back(idx1d(x_p+1, y_p-1));
+
+      if (y_p < (_resY-1))
+        neigh_p.push_back(idx1d(x_p+1, y_p+1));
+    }
+
+    if (y_p > 0) {
+      neigh_p.push_back(idx1d(x_p, y_p-1));
+    }
+
+    if (y_p < _resY-1) {
+      neigh_p.push_back(idx1d(x_p, y_p+1));
     }
 
     return neigh_p;
@@ -224,7 +251,8 @@ private:
 
   void computeDensity()
   {
-    for (int i = 0; i < _pos.size(); i++) {
+    for (tIndex i = 0; i < _pos.size(); i++) {
+      _d[i] = 0.0;                                                  // for next iteration (avoid exploding to inf)
       std::vector<tIndex> neighCells = computeNeighbors(_pos[i]);   // neighboring cells of particle i
 
       for (auto &n : neighCells) {
@@ -238,38 +266,62 @@ private:
 
   void computePressure()
   {
-    // TODO:
+    for (tIndex i = 0; i < _pos.size(); i++) {
+      _p[i] = equationOfState(_d[i], _d0, _k);
+    }
   }
 
   void applyBodyForce()
   {
-    for (int i = 0; i < _pos.size(); i++) {
+    for (tIndex i = 0; i < _pos.size(); i++)
       _acc[i] += _g;                                                // body acceleration of each particle
-    }
   }
 
   void applyPressureForce()
   {
-    // TODO:
+    for (tIndex i = 0; i < _pos.size(); i++) {
+      std::vector<tIndex> neighCells = computeNeighbors(_pos[i]);
+
+      for (auto &n : neighCells) {
+        std::vector<tIndex> neighPartCell_n = _pidxInGrid[n];
+
+        for (auto &p : neighPartCell_n) {
+          if (i != p)
+            _acc[i] -= _m0 * (_p[i] /_d[i] / _d[i] + _p[p] / _d[p] / _d[p]) * _kernel.grad_w(_pos[i] - _pos[p]);
+        }
+      }
+    }
   }
 
   void applyViscousForce()
   {
-    // TODO:
+    Vec2f num = Vec2f(0,0), den = Vec2f(0,0);                       // numerator and denominator for viscosity calculation
+    Vec2f relPos = Vec2f(0,0);
+
+    for (tIndex i = 0; i < _pos.size(); i++) {
+      std::vector<tIndex> neighCells = computeNeighbors(_pos[i]);
+
+      for (auto &n : neighCells) {                                  // take each neighbor cell
+        std::vector<tIndex> neighPartCell_n = _pidxInGrid[n];
+
+        for (auto &p : neighPartCell_n) {                           // take each neighbor particle
+          if (i != p)
+            _acc[i] += (2 * _nu * _m0 / _d[p] * (_vel[p] - _vel[i]) * (_pos[i] - _pos[p]) * _kernel.grad_w(_pos[i] - _pos[p])) / ((_pos[i] - _pos[p]) * (_pos[i] - _pos[p]) + 0.01 * _h * _h);
+        }
+      }
+    }
   }
 
   void updateVelocity()
   {
-    for (int p = 0; p < _pos.size(); p++) {
+    for (tIndex p = 0; p < _pos.size(); p++)
       _vel[p] = _vel[p] + _dt*_acc[p];
-    }
   }
 
   void updatePosition()
   {
-    for (int p = 0; p < _pos.size(); p++) {
+    for (tIndex p = 0; p < _pos.size(); p++)
       _pos[p] = _pos[p] + _dt*_vel[p];
-    }
   }
 
   // simple collision detection/resolution for each particle
