@@ -315,7 +315,7 @@ public:
   }
 
   std::vector<float> getFaceArea() {
-    std::vector area(_triangleIndices.size(), 0.0);
+    std::vector<float> area(_triangleIndices.size(), 0.0);
     float s, distA, distB, distC;
 
     for(unsigned int tIt = 0; tIt < _triangleIndices.size(); ++tIt) {
@@ -340,28 +340,21 @@ public:
     return area;
   }
 
-  void getCentroid(std::vector<float> &faceCentroid) {
-    faceCentroid(_triangleIndices.size(), 0.0);         // initialization
+  void getCentroid(std::vector<glm::vec3> &faceCentroid) {
+    faceCentroid.clear();                         // initialization
+    float aCent = 0.f, bCent = 0.f, cCent = 0.f;  // coordinates for centroid
 
     for(unsigned int tIt = 0; tIt < _triangleIndices.size(); ++tIt) {
       unsigned int a = _triangleIndices[tIt][0];
       unsigned int b = _triangleIndices[tIt][1];
       unsigned int c = _triangleIndices[tIt][2];
 
-      Edge Eab(a,b);
-      Edge Ebc(b,c);
-      Edge Eca(c,a);
+      float aCent = (_vertexPositions[a].x + _vertexPositions[b].x + _vertexPositions[c].x) / 3;
+      float bCent = (_vertexPositions[a].y + _vertexPositions[b].y + _vertexPositions[c].y) / 3;
+      float cCent = (_vertexPositions[a].z + _vertexPositions[b].z + _vertexPositions[c].z) / 3;
 
-      s = 0.0, distA = 0.0, distB = 0.0, distC = 0.0;
-      distA = Eab.calculateDistance(_vertexPositions);
-      distB = Ebc.calculateDistance(_vertexPositions);
-      distC = Eca.calculateDistance(_vertexPositions);
-
-      s = 0.5 * (distA + distB + distC);
-
-      area[tIt] = sqrt(s * (s-distA) * (s-distB) * (s-distC));
+      faceCentroid.push_back(glm::vec3(aCent, bCent, cCent));
     }
-
   }
 
   // Estimate the new vertex positions
@@ -371,21 +364,25 @@ public:
   // position[0,1,2]: for different meshes, different sigmas can be tested. The user specify which one he wants here
   void robustEstimation(std::vector<float> sigma_fp, std::vector<float> sigma_gp, unsigned int position) {
     // ----------- Useful variables
-    float sigma_f;                      // spatial weight gaussian
-    float sigma_g;                      // influence weight gaussian
-    float k;                            // normalization factor
-    float f, g;                         // spatial and influence weights
-    float meanEdgeLength;               // ||e||
-    std::vector<float> faceArea;        // area of the face
-    std::vector<float> faceCentroid;    // centroid of the face
-    std::vector<glm::vec3> newVertices; // push the changed vertices
+    float sigma_f;                            // spatial weight gaussian
+    float sigma_g;                            // influence weight gaussian
+    float k;                                  // normalization factor
+    float f, g;                               // spatial and influence weights
+    float meanEdgeLength;                     // ||e||
+    std::vector<float> faceArea;              // area of the face
+    std::vector<glm::vec3> faceCentroid;      // centroid of the face
+    std::vector<glm::vec3> newVertices;       // push the changed vertices
+    std::vector<glm::vec3> mollifiedNormals;  // smoothed normals
 
     // ----------- Smoothing and denoising
     meanEdgeLength = getAverageEdgeLength();
-    sigma_f = sigma_fp * meanEdgeLength;
-    sigma_g = sigma_gp * meanEdgeLength;
+    sigma_f = sigma_fp[position] * meanEdgeLength;
+    sigma_g = sigma_gp[position] * meanEdgeLength;
     faceArea = getFaceArea();
-    faceCentroid =
+    getCentroid(faceCentroid);
+
+    // ----------- Mollification
+
   }
 
   void subdivideLoop() {
