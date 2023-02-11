@@ -171,9 +171,6 @@ public:
     glViewport(0, 0, _depthMapTextureWidth, _depthMapTextureHeight);
     glBindFramebuffer(GL_FRAMEBUFFER, _depthMapFbo);
     glClear(GL_DEPTH_BUFFER_BIT);
-
-    // you can now render the geometry, assuming you have set the view matrix
-    // according to the light viewpoint
   }
 
   void free() { glDeleteFramebuffers(1, &_depthMapFbo); }
@@ -260,7 +257,6 @@ struct Light {
     shadowMap.bindFbo();
   }
 };
-
 
 struct Scene {
   std::vector<Light> lights;
@@ -521,7 +517,7 @@ void initGLFW()
   glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
 
   // Create the window
-  g_window = glfwCreateWindow(g_windowWidth, g_windowHeight, "IGR202 - Practical - Shadow", nullptr, nullptr);
+  g_window = glfwCreateWindow(g_windowWidth, g_windowHeight, "IGR202 - Non-Iterative, Feature-Preserving Mesh Smoothing", nullptr, nullptr);
   if(!g_window) {
     std::cerr << "ERROR: Failed to open window" << std::endl;
     glfwTerminate();

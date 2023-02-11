@@ -18,6 +18,22 @@ class Mesh {
 public:
   virtual ~Mesh();
 
+  struct Edge {
+    unsigned int a , b;
+    Edge( unsigned int c , unsigned int d ) : a( std::min<unsigned int>(c,d) ) , b( std::max<unsigned int>(c,d) ) {}
+    bool operator < ( Edge const & o ) const {   return a < o.a  ||  (a == o.a && b < o.b);  }
+    bool operator == ( Edge const & o ) const {   return a == o.a  &&  b == o.b;  }
+    float calculateDistance(std::vector<glm::vec3> const vecPos) const {
+      glm::vec3 vector;
+
+      vector.x = pow(vecPos[b].x - vecPos[a].x, 2);
+      vector.y = pow(vecPos[b].y - vecPos[a].y, 2);
+      vector.z = pow(vecPos[b].z - vecPos[a].z, 2);
+
+      return sqrt(vector.x + vector.y + vector.z);
+    }
+  };
+
   const std::vector<glm::vec3> &vertexPositions() const { return _vertexPositions; }
   std::vector<glm::vec3> &vertexPositions() { return _vertexPositions; }
 
@@ -116,13 +132,6 @@ public:
     //std::vector<glm::vec3> newVertices( _vertexPositions.size(), glm::vec3(0,0,0) );
     std::vector<glm::vec3> newVertices;
     std::vector<glm::uvec3> newTriangles;
-
-    struct Edge {
-      unsigned int a , b;
-      Edge( unsigned int c , unsigned int d ) : a( std::min<unsigned int>(c,d) ) , b( std::max<unsigned int>(c,d) ) {}
-      bool operator < ( Edge const & o ) const {   return a < o.a  ||  (a == o.a && b < o.b);  }
-      bool operator == ( Edge const & o ) const {   return a == o.a  &&  b == o.b;  }
-    };
 
     std::map< Edge , unsigned int > newVertexOnEdge; // this will be useful to find out whether we already inserted an odd vertex or not
     std::map< Edge , std::set< unsigned int > > trianglesOnEdge; // this will be useful to find out if an edge is boundary or not
@@ -274,6 +283,109 @@ public:
     _vertexPositions = newVertices;
     recomputePerVertexNormals( );
     recomputePerVertexTextureCoordinates( );
+  }
+
+  float getAverageEdgeLength() {
+    float averageEdgeLength = 0.f;
+    std::vector<Edge> edges;
+
+    edges.clear();
+
+    for(unsigned int tIt = 0; tIt < _triangleIndices.size(); ++tIt) {
+      // creates the edges for each triangle on the mesh
+      unsigned int a = _triangleIndices[tIt][0];
+      unsigned int b = _triangleIndices[tIt][1];
+      unsigned int c = _triangleIndices[tIt][2];
+
+      Edge Eab(a,b);
+      Edge Ebc(b,c);
+      Edge Eca(c,a);
+
+      // add the distance of each edge
+      averageEdgeLength += Eab.calculateDistance(_vertexPositions);
+      averageEdgeLength += Ebc.calculateDistance(_vertexPositions);
+      averageEdgeLength += Eca.calculateDistance(_vertexPositions);
+
+      edges.push_back(Eab);
+      edges.push_back(Ebc);
+      edges.push_back(Eca);
+    }
+
+    return averageEdgeLength /= edges.size();
+  }
+
+  std::vector<float> getFaceArea() {
+    std::vector area(_triangleIndices.size(), 0.0);
+    float s, distA, distB, distC;
+
+    for(unsigned int tIt = 0; tIt < _triangleIndices.size(); ++tIt) {
+      unsigned int a = _triangleIndices[tIt][0];
+      unsigned int b = _triangleIndices[tIt][1];
+      unsigned int c = _triangleIndices[tIt][2];
+
+      Edge Eab(a,b);
+      Edge Ebc(b,c);
+      Edge Eca(c,a);
+
+      s = 0.0, distA = 0.0, distB = 0.0, distC = 0.0;
+      distA = Eab.calculateDistance(_vertexPositions);
+      distB = Ebc.calculateDistance(_vertexPositions);
+      distC = Eca.calculateDistance(_vertexPositions);
+
+      s = 0.5 * (distA + distB + distC);
+
+      area[tIt] = sqrt(s * (s-distA) * (s-distB) * (s-distC));
+    }
+
+    return area;
+  }
+
+  void getCentroid(std::vector<float> &faceCentroid) {
+    faceCentroid(_triangleIndices.size(), 0.0);         // initialization
+
+    for(unsigned int tIt = 0; tIt < _triangleIndices.size(); ++tIt) {
+      unsigned int a = _triangleIndices[tIt][0];
+      unsigned int b = _triangleIndices[tIt][1];
+      unsigned int c = _triangleIndices[tIt][2];
+
+      Edge Eab(a,b);
+      Edge Ebc(b,c);
+      Edge Eca(c,a);
+
+      s = 0.0, distA = 0.0, distB = 0.0, distC = 0.0;
+      distA = Eab.calculateDistance(_vertexPositions);
+      distB = Ebc.calculateDistance(_vertexPositions);
+      distC = Eca.calculateDistance(_vertexPositions);
+
+      s = 0.5 * (distA + distB + distC);
+
+      area[tIt] = sqrt(s * (s-distA) * (s-distB) * (s-distC));
+    }
+
+  }
+
+  // Estimate the new vertex positions
+  // receives the following parameters:
+  // sigma_fp: value of sigma_f from table 1
+  // sigma_gp: value of sigma_g from table 1
+  // position[0,1,2]: for different meshes, different sigmas can be tested. The user specify which one he wants here
+  void robustEstimation(std::vector<float> sigma_fp, std::vector<float> sigma_gp, unsigned int position) {
+    // ----------- Useful variables
+    float sigma_f;                      // spatial weight gaussian
+    float sigma_g;                      // influence weight gaussian
+    float k;                            // normalization factor
+    float f, g;                         // spatial and influence weights
+    float meanEdgeLength;               // ||e||
+    std::vector<float> faceArea;        // area of the face
+    std::vector<float> faceCentroid;    // centroid of the face
+    std::vector<glm::vec3> newVertices; // push the changed vertices
+
+    // ----------- Smoothing and denoising
+    meanEdgeLength = getAverageEdgeLength();
+    sigma_f = sigma_fp * meanEdgeLength;
+    sigma_g = sigma_gp * meanEdgeLength;
+    faceArea = getFaceArea();
+    faceCentroid =
   }
 
   void subdivideLoop() {
