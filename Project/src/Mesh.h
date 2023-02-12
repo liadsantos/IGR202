@@ -5,6 +5,7 @@
 #include <vector>
 #include <memory>
 #include <math.h>
+#include <cmath>
 
 #include <glm/glm.hpp>
 #include <glm/ext.hpp>
@@ -357,11 +358,86 @@ public:
     }
   }
 
-  // Estimate the new vertex positions
-  // receives the following parameters:
-  // sigma_fp: value of sigma_f from table 1
-  // sigma_gp: value of sigma_g from table 1
-  // position[0,1,2]: for different meshes, different sigmas can be tested. The user specify which one he wants here
+  float getDistanceVec3(glm::vec3 a, glm::vec3 b) {
+    float x = pow(a.x - b.x, 2);
+    float y = pow(a.y - b.y, 2);
+    float z = pow(a.z - b.z, 2);
+
+    return sqrt(x + y + z);
+  }
+
+  std::vector<glm::vec3> getCentroidsNeighboringFaces(
+    std::vector<glm::vec3> &faceCentroid,
+    std::vector<unsigned int> &indicesOfTriangles,
+    glm::vec3 point,
+    float sigma_f
+  ) {
+    float radius = 2.f * sigma_f;                     // radius of neighbors
+    glm::vec3 faceCent;                               // centroid of the considered face in the loop
+    std::vector<glm::vec3> neighborsOfPoint;          // storage the neighbors
+
+    neighborsOfPoint.clear();                         // initialization
+
+    for(unsigned int tIt = 0; tIt < _triangleIndices.size(); ++tIt) {
+      faceCent = faceCentroid[tIt];
+
+      if (getDistanceVec3(point, faceCent) <= radius) {
+        neighborsOfPoint.push_back(faceCent);
+        indicesOfTriangles.push_back(tIt);
+      }
+    }
+
+    return neighborsOfPoint;
+  }
+
+  void mollification(
+    std::vector<glm::vec3> &mollifiedNormals,
+    std::vector<glm::vec3> &faceCentroid,
+    std::vector<float> &faceArea,
+    float sigma_f
+  ) {
+    float sigma_fm = sigma_f / 2.f;                                     // spatial weigth for mollification
+    std::vector<std::vector<glm::vec3>> vertNeighFaces;                 // keep the neighboring vertices of all points
+    std::vector<unsigned int> indicesOfTriangles;                       // storage the indices of triangles
+
+    for (auto &vert : vertNeighFaces)                                   // initialization of vertices
+      vert.clear();
+
+    for (unsigned int vIt = 0; vIt < _vertexPositions.size(); ++vIt) {
+      glm::vec3 p = _vertexPositions[vIt];                              // point to calculate the neighbors
+      glm::vec3 new_p = glm::vec3(0.0, 0.0, 0.0);                       // new points
+      float sum_weight = 0.0;                                           // equation (3) sum
+      float k = 0.0;                                                    // normalization factor
+
+      indicesOfTriangles.clear();                                       // clear for new iteration
+
+      vertNeighFaces.push_back(                                         // define the centroids of neighboring faces
+        getCentroidsNeighboringFaces(faceCentroid, indicesOfTriangles, p, sigma_f)
+      );
+
+      // Pass of non-robust smoothing using equation (3) without influence weigth
+      for (unsigned int i = 0; i < vertNeighFaces[vIt].size(); ++i) {
+        float dis = getDistanceVec3(p, vertNeighFaces[vIt][i]);
+        float f = std::exp(dis * dis / (2 * sigma_fm * sigma_fm));      // spatial weight
+        float aq = faceArea[indicesOfTriangles[i]];
+
+        new_p += vertNeighFaces[vIt][i] * area * f;
+        k += area * f;
+      }
+      new_p /= k;
+    }
+
+    // how to mollify a normal?
+
+
+  }
+
+  /* Estimate the new vertex positions
+   * receives the following parameters:
+   * sigma_fp: value of sigma_f from table 1
+   * sigma_gp: value of sigma_g from table 1
+   * position[0,1,2]: for different meshes, different sigmas can be tested. The user specify which one he wants here
+   */
   void robustEstimation(std::vector<float> sigma_fp, std::vector<float> sigma_gp, unsigned int position) {
     // ----------- Useful variables
     float sigma_f;                            // spatial weight gaussian
@@ -381,7 +457,8 @@ public:
     faceArea = getFaceArea();
     getCentroid(faceCentroid);
 
-    // ----------- Mollification
+
+
 
   }
 
