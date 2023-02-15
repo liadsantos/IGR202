@@ -358,30 +358,21 @@ public:
     }
   }
 
-  float getDistanceVec3(glm::vec3 a, glm::vec3 b) {
-    float x = pow(a.x - b.x, 2);
-    float y = pow(a.y - b.y, 2);
-    float z = pow(a.z - b.z, 2);
-
-    return sqrt(x + y + z);
-  }
-
   std::vector<glm::vec3> getCentroidsNeighboringFaces(
     std::vector<glm::vec3> &faceCentroid,
     std::vector<unsigned int> &indicesOfTriangles,
     glm::vec3 point,
     float sigma_f
   ) {
-    float radius = 2.f * sigma_f;                     // radius of neighbors
+    float radius = sigma_f;                           // radius of neighbors
     glm::vec3 faceCent;                               // centroid of the considered face in the loop
     std::vector<glm::vec3> neighborsOfPoint;          // storage the neighbors
 
     neighborsOfPoint.clear();                         // initialization
-
     for(unsigned int tIt = 0; tIt < _triangleIndices.size(); ++tIt) {
       faceCent = faceCentroid[tIt];
 
-      if (getDistanceVec3(point, faceCent) <= radius) {
+      if (glm::distance(point, faceCent) <= radius && glm::distance(point, faceCent) > 0.08) {
         neighborsOfPoint.push_back(faceCent);
         indicesOfTriangles.push_back(tIt);
       }
@@ -416,7 +407,7 @@ public:
 
       // Pass of non-robust smoothing using equation (3) without influence weigth
       for (unsigned int i = 0; i < vertNeighFaces[vIt].size(); ++i) {
-        float dis = getDistanceVec3(p, vertNeighFaces[vIt][i]);
+        float dis = glm::distance(p, vertNeighFaces[vIt][i]);
         float f = std::exp(-dis * dis / (2 * sigma_fm * sigma_fm));     // spatial weight
         float aq = faceArea[indicesOfTriangles[i]];
 
@@ -489,26 +480,43 @@ public:
       for (unsigned int i = 0; i < vertNeighFaces.size(); ++i) {
         glm::vec3 normal = mollifiedNormals[indicesOfTriangles[i]];                                       // normal of the neighbor face
         glm::vec3 cent = faceCentroid[indicesOfTriangles[i]];                                             // centroid of the neighbor face
-        glm::vec3 predictor_g = p - getDistanceVec3(p - cent, normal) * normal;                           // PI_q(p)                                            
+        glm::vec3 predictor_g = p - normal * glm::dot((p-cent), normal);                                  // PI_q(p) 
 
-        float dist_spacial = getDistanceVec3(p, faceCentroid[indicesOfTriangles[i]]);                     // ||p - c_q||
-        float weight_spacial = std::exp(- dist_spacial * dist_spacial / (2 * sigma_f * sigma_f));         // f
+        // std::cout << "Face: " << indicesOfTriangles[i] << "\t";   
+        // std::cout << "Dot: " << glm::dot((p-cent), normal) << "\t";
+        // std::cout << "Valor predictor x: " << predictor_g.x << "\n";                                       
 
-        float dist_influence = getDistanceVec3(p, predictor_g);                                           // ||p - PI_q(p)||
+        float dist_spacial = glm::distance(p, faceCentroid[indicesOfTriangles[i]]);                     // ||p - c_q||
+        float weight_spacial = std::exp(- dist_spacial * dist_spacial / (2 * sigma_f * sigma_f));       // f
+
+        float dist_influence = glm::distance(p, predictor_g);                                           // ||p - PI_q(p)||
         float weight_influence = std::exp(- dist_influence * dist_influence / (2 * sigma_g * sigma_g));   // g
 
         float area = faceArea[indicesOfTriangles[i]];
 
-        new_p += predictor_g * area * weight_spacial * weight_influence;
-        k += area * weight_spacial * weight_influence;
+        std::cout << "Face: " << indicesOfTriangles[i] << "\t";   
+        // std::cout << "Dist Spacial: " << dist_spacial << "\t";
+        // std::cout << "W Spacial: " << weight_spacial << "\t";  
+        std::cout << "Dist Inf: " << dist_influence << "\t";
+        std::cout << "W Inf: " << weight_influence << "\t";
+        // std::cout << "area: " << area << "\n";
+
+
+    //     // std::cout << "Face: " << indicesOfTriangles[i] << std::endl;
+    //     new_p += predictor_g * area * weight_spacial * weight_influence;
+    //     k += area * weight_spacial * weight_influence;
+    //     std::cout << k << "\n\n";
       }
-
-      new_p /= k;
-      newVertices[vIt] = new_p;   // SEGMENTATION FAULT AQUI! VERIFICAR!
+      std::cout << "------\n";
+    //   new_p /= k;
+    //   newVertices.push_back(new_p);   
     }
-
+    // std::cout << _vertexPositions[0].x << "   " << _vertexPositions[0].y << "   " << _vertexPositions[0].z << "\n";
     // _vertexPositions = newVertices;
+    
     // recomputePerVertexNormals( );
+    // recomputePerVertexTextureCoordinates( );
+    // std::cout << _vertexPositions[0].x << "   " << _vertexPositions[0].y << "   " << _vertexPositions[0].z << "\n";
   }
 
   void subdivideLoop() {

@@ -48,11 +48,11 @@
 #include "stb_image.h"
 
 // Monkey:
-//const std::string DEFAULT_MESH_FILENAME("data/monkey.off");
+const std::string DEFAULT_MESH_FILENAME("data/monkey.off");
 // Sphere:
-const std::string DEFAULT_MESH_FILENAME("data/sphere.off");
+// const std::string DEFAULT_MESH_FILENAME("data/sphere.off");
 // Bunny:
-//const std::string DEFAULT_MESH_FILENAME("data/bun000.off");
+// const std::string DEFAULT_MESH_FILENAME("data/bun000.off");
 // Dragon:
 // const std::string DEFAULT_MESH_FILENAME("data/dragon.off");
 
