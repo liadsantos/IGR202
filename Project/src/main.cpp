@@ -50,9 +50,9 @@
 // Monkey:
 //const std::string DEFAULT_MESH_FILENAME("data/monkey.off");
 // Sphere:
-//const std::string DEFAULT_MESH_FILENAME("data/sphere.off");
+const std::string DEFAULT_MESH_FILENAME("data/sphere.off");
 // Bunny:
-const std::string DEFAULT_MESH_FILENAME("data/bun000.off");
+//const std::string DEFAULT_MESH_FILENAME("data/bun000.off");
 // Dragon:
 // const std::string DEFAULT_MESH_FILENAME("data/dragon.off");
 
@@ -90,6 +90,14 @@ unsigned int g_albedoTexOnGPU;
 int g_normalTexLoaded = 0;
 GLuint g_normalTex;
 unsigned int g_normalTexOnGPU;
+
+// denoising parameters
+std::vector<float> sigma_fBunny{2.f, 2.f, 4.f};     
+//std::vector<float> sigma_fDragon{4};
+
+std::vector<float> sigma_gBunny{0.2, 4.f, 4.f};
+//std::vector<float> sigma_gDragon{1};
+unsigned int indexSigma = 0;      // 0, 1 or 2
 
 GLuint loadTextureFromFileToGPU(const std::string &filename)
 {
@@ -397,6 +405,14 @@ struct Scene {
     rhino->subdivideLoop();
     rhino->init();
   }
+
+  void meshDenoising(
+    std::vector<float> sigma_fp, 
+    std::vector<float> sigma_gp, 
+    unsigned int position
+  ) {
+    rhino->applyMeshDenoising(sigma_fp, sigma_gp, position);
+  }
 };
 
 Scene g_scene;
@@ -432,7 +448,8 @@ void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods
   if(action == GLFW_PRESS && key == GLFW_KEY_H) {
     printHelp();
   } else if(action == GLFW_PRESS && key == GLFW_KEY_L) {
-    g_scene.subdivideCenterMesh();
+    //g_scene.subdivideCenterMesh();
+    g_scene.meshDenoising(sigma_fBunny, sigma_gBunny, indexSigma);
   } else if(action == GLFW_PRESS && key == GLFW_KEY_S) {
     g_scene.saveShadowMapsPpm = true;
   } else if(action == GLFW_PRESS && key == GLFW_KEY_T) {

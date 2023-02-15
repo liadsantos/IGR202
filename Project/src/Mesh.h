@@ -406,7 +406,6 @@ public:
     for (unsigned int vIt = 0; vIt < _vertexPositions.size(); ++vIt) {
       glm::vec3 p = _vertexPositions[vIt];                              // point to calculate the neighbors
       glm::vec3 new_p = glm::vec3(0.0, 0.0, 0.0);                       // new points
-      float sum_weight = 0.0;                                           // equation (3) sum
       float k = 0.0;                                                    // normalization factor
 
       indicesOfTriangles.clear();                                       // clear for new iteration
@@ -418,18 +417,15 @@ public:
       // Pass of non-robust smoothing using equation (3) without influence weigth
       for (unsigned int i = 0; i < vertNeighFaces[vIt].size(); ++i) {
         float dis = getDistanceVec3(p, vertNeighFaces[vIt][i]);
-        float f = std::exp(dis * dis / (2 * sigma_fm * sigma_fm));      // spatial weight
+        float f = std::exp(-dis * dis / (2 * sigma_fm * sigma_fm));     // spatial weight
         float aq = faceArea[indicesOfTriangles[i]];
 
-        new_p += vertNeighFaces[vIt][i] * area * f;
-        k += area * f;
+        new_p += vertNeighFaces[vIt][i] * aq * f;
+        k += aq * f;
       }
       new_p /= k;
+      mollifiedNormals.push_back(new_p);                                // push the new mollified normals
     }
-
-    // how to mollify a normal?
-
-
   }
 
   /* Estimate the new vertex positions
@@ -457,14 +453,75 @@ public:
     faceArea = getFaceArea();
     getCentroid(faceCentroid);
 
+    // std::cout << "sigma fp: " << sigma_fp[position] << std::endl;
+    // std::cout << "sigma gp: " << sigma_gp[position] << std::endl;
+    // std::cout << "sigma f: " << sigma_f << std::endl;
+    // std::cout << "sigma g: " << sigma_g << std::endl;
+    // std::cout << "area of triangle 0: " << faceArea[1] << std::endl;
+    // std::cout << "centroid.x of triangle 0: " << faceCentroid[0].x << std::endl;
 
+    // mollification
+    mollifiedNormals.clear();
+    mollification(mollifiedNormals, faceCentroid, faceArea, sigma_f);
 
+    // std::cout << "normal.x of triangle 0: " << mollifiedNormals[0].x << std::endl;
+    // std::cout << "normal before .x of triangle 0: " << _vertexNormals[0].x << std::endl;
 
+    // robust estimation of vertices
+    newVertices.clear();
+    for (unsigned int vIt = 0; vIt < _vertexPositions.size(); ++vIt) {
+      // point to be estimated
+      glm::vec3 p = _vertexPositions[vIt]; 
+
+      // indices of each neighbor triangle
+      std::vector<unsigned int> indicesOfTriangles;                             
+      indicesOfTriangles.clear();
+
+      // get the neighboring faces
+      std::vector<glm::vec3> vertNeighFaces = getCentroidsNeighboringFaces(
+        faceCentroid, indicesOfTriangles, p, sigma_f
+      );
+
+      // parameters for equation (3) and (4)
+      glm::vec3 new_p = glm::vec3(0.0, 0.0, 0.0);                                          
+      float k = 0.0;                                                    
+
+      for (unsigned int i = 0; i < vertNeighFaces.size(); ++i) {
+        glm::vec3 normal = mollifiedNormals[indicesOfTriangles[i]];                                       // normal of the neighbor face
+        glm::vec3 cent = faceCentroid[indicesOfTriangles[i]];                                             // centroid of the neighbor face
+        glm::vec3 predictor_g = p - getDistanceVec3(p - cent, normal) * normal;                           // PI_q(p)                                            
+
+        float dist_spacial = getDistanceVec3(p, faceCentroid[indicesOfTriangles[i]]);                     // ||p - c_q||
+        float weight_spacial = std::exp(- dist_spacial * dist_spacial / (2 * sigma_f * sigma_f));         // f
+
+        float dist_influence = getDistanceVec3(p, predictor_g);                                           // ||p - PI_q(p)||
+        float weight_influence = std::exp(- dist_influence * dist_influence / (2 * sigma_g * sigma_g));   // g
+
+        float area = faceArea[indicesOfTriangles[i]];
+
+        new_p += predictor_g * area * weight_spacial * weight_influence;
+        k += area * weight_spacial * weight_influence;
+      }
+
+      new_p /= k;
+      newVertices[vIt] = new_p;   // SEGMENTATION FAULT AQUI! VERIFICAR!
+    }
+
+    // _vertexPositions = newVertices;
+    // recomputePerVertexNormals( );
   }
 
   void subdivideLoop() {
     //subdivideLinear();
     subdivideLoop2();
+  }
+
+  void applyMeshDenoising(
+    std::vector<float> sigma_fp, 
+    std::vector<float> sigma_gp, 
+    unsigned int position
+  ) {
+    robustEstimation(sigma_fp, sigma_gp, position);
   }
 
 private:
