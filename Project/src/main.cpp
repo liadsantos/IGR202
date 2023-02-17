@@ -48,13 +48,9 @@
 #include "stb_image.h"
 
 // Monkey:
-const std::string DEFAULT_MESH_FILENAME("data/monkey.off");
+// const std::string DEFAULT_MESH_FILENAME("data/monkey.off");
 // Sphere:
-// const std::string DEFAULT_MESH_FILENAME("data/sphere.off");
-// Bunny:
-// const std::string DEFAULT_MESH_FILENAME("data/bun315.off");
-// Dragon:
-// const std::string DEFAULT_MESH_FILENAME("data/dragon000.off");
+const std::string DEFAULT_MESH_FILENAME("data/sphere.off");
 
 // window parameters
 GLFWwindow *g_window = nullptr;
@@ -92,12 +88,9 @@ GLuint g_normalTex;
 unsigned int g_normalTexOnGPU;
 
 // denoising parameters
-std::vector<float> sigma_fBunny{2.0f, 2.f, 4.f};     
-// std::vector<float> sigma_fDragon{4};
-
-std::vector<float> sigma_gBunny{0.8, 4.f, 4.f};
-// std::vector<float> sigma_gDragon{1};
-unsigned int indexSigma = 0;      // 0, 1 or 2
+std::vector<float> sigma_f{2.7f, 3.5f};     // sphere, monkey
+std::vector<float> sigma_g{8.1f, 6.2f};     // sphere, monkey
+unsigned int indexSigma = 1;                // 0, 1
 bool mollify = true;
 
 GLuint loadTextureFromFileToGPU(const std::string &filename)
@@ -414,7 +407,7 @@ struct Scene {
   }
 
   void meshDenoising() {
-    rhino->applyMeshDenoising(sigma_fBunny, sigma_gBunny, indexSigma, mollify);
+    rhino->applyMeshDenoising(sigma_f, sigma_g, indexSigma, mollify);
     rhino->init();
   }
 };

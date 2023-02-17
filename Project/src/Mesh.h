@@ -81,17 +81,6 @@ public:
 
   void addPlan(float square_half_side = 1.0f);
 
-  /*float calculateAlpha(unsigned int numTri) {
-    float alpha;
-
-    if (numTri > 3) {
-      alpha = 0.125f
-    }
-    else {
-      alpha = 0.1875f;
-    }
-  }*/
-
   void subdivideLinear() {
     std::vector<glm::vec3> newVertices = _vertexPositions;
     std::vector<glm::uvec3> newTriangles;
@@ -394,10 +383,10 @@ public:
       faceCent = faceCentroid[tIt];
       float distance = glm::distance(point, faceCent);
 
-      if (distance <= radius && distance > 0.0) {
-        neighborsOfPoint.push_back(faceCent);
-        indicesOfTriangles.push_back(tIt);
-      }
+      //if (distance <= radius && distance > 0.0) {
+      neighborsOfPoint.push_back(faceCent);
+      indicesOfTriangles.push_back(tIt);
+      //}
     }
 
     return neighborsOfPoint;
@@ -474,9 +463,9 @@ public:
     
   void addNoise(){
     for(unsigned int i = 0 ; i < _vertexPositions.size(); ++i) {
-      _vertexPositions[i].x += ((rand() % 100) - 50) * 0.001;
-      _vertexPositions[i].y += ((rand() % 100) - 50) * 0.001;
-      _vertexPositions[i].z += ((rand() % 100) - 50) * 0.001;
+      _vertexPositions[i].x += ((rand() % 50) - 50) * 0.001;
+      _vertexPositions[i].y += ((rand() % 50) - 50) * 0.001;
+      _vertexPositions[i].z += ((rand() % 50) - 50) * 0.001;
     }
     
     recomputePerVertexNormals( );
@@ -487,7 +476,8 @@ public:
    * receives the following parameters:
    * sigma_fp: value of sigma_f from table 1
    * sigma_gp: value of sigma_g from table 1
-   * position[0,1,2]: for different meshes, different sigmas can be tested. The user specify which one he wants here
+   * position[0,1]: for different meshes, different sigmas can be tested. The user specify which one he wants here
+   * mollify: choose whether to mollify or not
    */
   void robustEstimation(std::vector<float> sigma_fp, std::vector<float> sigma_gp, unsigned int position, bool mollify) {
     // ----------- Useful variables
@@ -508,10 +498,6 @@ public:
     faceArea = getFaceArea();
     getCentroid(faceCentroid);
 
-    // std::cout << "sigma f: " << sigma_f << "\t\t";
-    // std::cout << "sigma f_ant: " << sigma_fp[position] << "\t\t";
-    // std::cout << "mean edge: " << meanEdgeLength << "\t\t";
-
     // mollification
     mollifiedNormals.clear();
     if (mollify)
@@ -521,8 +507,6 @@ public:
 
     // robust estimation of vertices
     newVertices.clear();
-    std::cout << "Point: " << _vertexPositions[11].x << "\t\t" << _vertexPositions[11].y << "\t\t" << _vertexPositions[11].z << "\n";
-
     for (unsigned int vIt = 0; vIt < _vertexPositions.size(); ++vIt) {
       // point to be estimated
       glm::vec3 p = _vertexPositions[vIt]; 
@@ -547,24 +531,20 @@ public:
         glm::vec3 cent = faceCentroid[idx];                                                             // centroid of the neighbor face
         glm::vec3 predictor_g = p - glm::dot((p-cent), normal) * normal;                                // PI_q(p)                                           
 
-        float dist_spacial = glm::distance(p, faceCentroid[idx]);                                       // ||p - c_q||
+        float dist_spacial = glm::distance(p, cent);                                                    // ||p - c_q||
         float weight_spacial = std::exp(-dist_spacial * dist_spacial / (2 * sigma_f * sigma_f));        // f
 
         float dist_influence = glm::distance(p, predictor_g);                                           // ||p - PI_q(p)||
         float weight_influence = std::exp(-dist_influence * dist_influence / (2 * sigma_g * sigma_g));  // g
 
-        float area = faceArea[idx];
+        float area = sigma_g * faceArea[idx];
 
         new_p += predictor_g * area * weight_spacial * weight_influence;
         k += area * weight_spacial * weight_influence;
       }
       new_p /= k;
       newVertices.push_back(new_p);   
-      std::cout << "k: " << k << "\n";
-      
     }
-    
-    std::cout << "Point: " << newVertices[11].x << "\t\t" << newVertices[11].y << "\t\t" << newVertices[11].z << "\n";
 
     _vertexPositions = newVertices;
     std::cout << "Finished!\n";
